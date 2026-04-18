@@ -19,7 +19,9 @@ const About = () => {
           <div className="text-center mt-14" style={{ position: 'relative', zIndex: 10 }}>
             <a href="#enterprise" onClick={(e) => scrollToId(e, 'enterprise')} style={{ textDecoration: 'none' }} className="about-enterprise-link text-[#64748B] text-xs font-bold uppercase tracking-[0.15em] hover:text-[#0C447C] transition-all duration-300 flex items-center justify-center gap-2">
               Associated with Thiyash Enterprise
-              <span className="material-symbols-outlined text-[14px] hover-bounce-arrow">arrow_downward</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 hover-bounce-arrow">
+                <path d="M7 13l5 5l5-5M12 6v12" />
+              </svg>
             </a>
           </div>
         </Reveal>

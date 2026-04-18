@@ -86,7 +86,9 @@ const Footer = () => {
             <p>© 2026 Perundurai Surgicals. All rights reserved. | Proprietor: K. Ragavendran B.E.</p>
             <a href="#home-strip" onClick={(e) => scrollToId(e, 'home-strip')} className="group inline-flex items-center justify-center gap-1 transition-all duration-300 hover:scale-105" style={{ textDecoration: 'none' }}>
               Back to top 
-              <span className="material-symbols-outlined text-[16px] group-hover:animate-bounce">arrow_upward</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover:animate-bounce">
+                <path d="M17 11l-5-5l-5 5M12 18V6" />
+              </svg>
             </a>
           </div>
         </footer>
