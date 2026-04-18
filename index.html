@@ -14,7 +14,8 @@
     <script>
       // We keep the config global but the project is mostly vanilla CSS
       // Tailwind will provide the utility classes for the new section
-      tailwind.config = {
+      if (typeof tailwind !== 'undefined') {
+        tailwind.config = {
         darkMode: "class",
         theme: {
           extend: {
@@ -84,7 +85,8 @@
           preflight: false, // CRITICAL: Disable preflight to avoid breaking existing Vanilla CSS styles
         }
       }
-    </script>
+    }
+  </script>
     <style>
         .material-symbols-outlined {
             font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;

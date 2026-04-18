@@ -20,7 +20,7 @@ const EnterpriseDetails = () => {
                 <div className="space-y-4">
                   {/* Logo */}
                   <div className="max-w-[280px]">
-                    <img src={`${import.meta.env.BASE_URL}t-logo.png`} alt="Thiyash Enterprise" className="w-full h-auto" />
+                    <img src={`${import.meta.env.BASE_URL}thiyash-logo.png`} alt="Thiyash Enterprise" className="w-full h-auto" />
                   </div>
                   <p className="text-[#43474f] text-sm uppercase tracking-[0.15em] font-semibold">
                     Manufacturer of Housekeeping Products
