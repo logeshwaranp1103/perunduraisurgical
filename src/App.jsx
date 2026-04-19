@@ -1,47 +1,19 @@
-import Navbar from './components/Navbar';
-import MarqueeStrip from './components/MarqueeStrip';
-import Hero from './components/Hero';
-import StatsBar from './components/StatsBar';
-import ShowcaseBand from './components/ShowcaseBand';
-import About from './components/About';
-import Products from './components/Products';
-import WhyUs from './components/WhyUs';
-import Brands from './components/Brands';
-import Licenses from './components/Licenses';
-import Services from './components/Services';
-import Testimonials from './components/Testimonials';
-import Contact from './components/Contact';
-import FAQ from './components/FAQ';
-import EnterpriseDetails from './components/EnterpriseDetails';
-import Footer from './components/Footer';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
+import ProductsPage from './pages/ProductsPage';
+import HomePage from './pages/HomePage';
+import ScrollToTop from './components/ScrollToTop';
 
-import { useEffect } from 'react';
+// Use Vite's BASE_URL so routing works on both localhost and GitHub Pages
+const basename = import.meta.env.BASE_URL;
 
-function App() {
-  useEffect(() => {
-    // Reveal logic moved to useReveal hook for better React compatibility
-  }, []);
-
+export default function App() {
   return (
-    <>
-      <Navbar />
-      <MarqueeStrip />
-      <Hero />
-      <StatsBar />
-      <ShowcaseBand />
-      <About />
-      <Products />
-      <WhyUs />
-      <Brands />
-      <Licenses />
-      <Services />
-      <Testimonials />
-      <Contact />
-      <EnterpriseDetails />
-      <FAQ />
-      <Footer />
-    </>
+    <BrowserRouter basename={basename}>
+      <ScrollToTop />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/products" element={<ProductsPage />} />
+      </Routes>
+    </BrowserRouter>
   );
 }
-
-export default App;

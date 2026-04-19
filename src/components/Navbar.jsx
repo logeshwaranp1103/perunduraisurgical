@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import { assetUrl } from '../utils/assetUrl';
 
@@ -7,19 +8,33 @@ const Navbar = () => {
   const [activeSection, setActiveSection] = useState('home-strip');
   const [scrolled, setScrolled] = useState(false);
   const scrollToId = useSmoothScroll();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const toggleNav = () => setIsOpen(!isOpen);
   const closeNav = () => setIsOpen(false);
 
   // Wrapper for navbar to also close mobile menu
   const handleNavClick = (e, id) => {
-    // Update underline immediately on click to avoid stale active state.
-    setActiveSection(id);
     closeNav();
+    
+    if (location.pathname !== '/') {
+      // If not on homepage, navigate there with the hash
+      navigate(`/#${id}`);
+      return;
+    }
+
+    // Update underline and scroll
+    setActiveSection(id);
     scrollToId(e, id);
   };
 
   useEffect(() => {
+    if (location.pathname !== '/') {
+      setActiveSection(''); // No active section line on sub-pages
+      return;
+    }
+
     const handleScroll = () => {
       const scrollPos = window.scrollY + 100;
       const aboutSection = document.getElementById('about');
@@ -46,18 +61,25 @@ const Navbar = () => {
     window.addEventListener('scroll', handleScroll);
     handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
+  }, [location.pathname]);
+
+  // Handle local scrolled state even on sub-pages
+  useEffect(() => {
+    const handleScrollSimple = () => setScrolled(window.scrollY > 40);
+    window.addEventListener('scroll', handleScrollSimple);
+    return () => window.removeEventListener('scroll', handleScrollSimple);
   }, []);
 
   return (
     <nav id="topnav" className={scrolled ? 'scrolled' : ''}>
-      <a href="#home-strip" className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
+      <a href="/#home-strip" className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
         <img src={assetUrl('PS-FULL-LOGO.png')} alt="Perundurai Surgicals" className="logo-img" />
       </a>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-        <li><a href="#home-strip" className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</a></li>
-        <li><a href="#about" className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
-        <li><a href="#products" className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</a></li>
-        <li><a href="#services" className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
+        <li><a href="/#home-strip" className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</a></li>
+        <li><a href="/#about" className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+        <li><a href="/#products" className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</a></li>
+        <li><a href="/#services" className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">
@@ -66,7 +88,7 @@ const Navbar = () => {
           </svg>
           Contact
         </a>
-        <a href="#contact-form" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</a>
+        <a href="/#contact-form" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</a>
         <button className="hamburger" id="hamburger" onClick={toggleNav}>
           <span></span><span></span><span></span>
         </button>

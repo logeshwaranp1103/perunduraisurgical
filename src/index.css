@@ -3547,8 +3547,8 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
-        gap: 32px 20px;
-        padding-bottom: 48px;
+        gap: 20px 20px;
+        padding-bottom: 12px;
     }
 
     .footer-grid .fg-about {
@@ -3608,9 +3608,10 @@ footer {
     }
 
     .footer-bottom {
+        padding: 8px 0 20px;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 16px;
+        gap: 12px;
         text-align: center;
     }
 
@@ -3653,6 +3654,10 @@ footer {
         overflow-wrap: anywhere;
     }
 
+    .foot-ci:last-child {
+        margin-bottom: 0;
+    }
+
     .form-row {
         grid-template-columns: 1fr;
     }
@@ -3675,7 +3680,7 @@ footer {
     }
 
     footer {
-        padding-top: 40px;
+        padding-top: 24px;
     }
 
     .s-head {
@@ -4056,7 +4061,7 @@ footer {
 /* ── ENTERPRISE DETAILS ── */
 .ent-section {
     background: #f8fafc;
-    padding: 16px 24px 40px;
+    padding: 64px 24px 40px;
     font-family: 'Inter', sans-serif;
 }
 
@@ -4127,10 +4132,8 @@ footer {
 .ent-brand-right {
     display: flex;
     flex-direction: column;
-    align-items: flex-end;
+    align-items: flex-start;
     gap: 16px;
-    margin-top: -50px;
-    margin-right: 10px;
 }
 
 .ent-iso-badge {
@@ -4517,6 +4520,12 @@ footer {
         align-items: center;
     }
 
+    .ent-brand-right {
+        align-items: flex-end;
+        margin-top: -50px;
+        margin-right: 10px;
+    }
+
     .ent-bento {
         grid-template-columns: 7fr 5fr;
         gap: 48px;
@@ -4582,4 +4591,389 @@ footer {
 
 .about-enterprise-link:hover .hover-bounce-arrow {
     animation: arrowBounceUpDown 1s ease-in-out infinite;
+}
+
+/* ══════════════════════════════════════════════════
+   PRODUCTS PAGE  (/products route)
+══════════════════════════════════════════════════ */
+
+/* ─── Hero ─── */
+.pp-hero {
+    position: relative;
+    height: 340px;
+    overflow: hidden;
+    display: flex;
+    align-items: flex-end;
+}
+
+.pp-hero-bg {
+    position: absolute;
+    inset: 0;
+    background-size: cover;
+    background-position: center;
+    transition: background-image 0.5s ease;
+    transform: scale(1.05);
+    filter: brightness(0.55);
+}
+
+.pp-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(to top, rgba(5, 14, 30, 0.85) 0%, rgba(5, 14, 30, 0.2) 60%, transparent 100%);
+}
+
+.pp-hero-content {
+    position: relative;
+    z-index: 2;
+    padding: 0 48px 48px;
+    max-width: 800px;
+    width: 100%;
+}
+
+.pp-hero-tag {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #60a5fa;
+    margin-bottom: 10px;
+}
+
+.pp-hero-title {
+    font-family: 'Instrument Serif', serif;
+    font-size: clamp(28px, 4vw, 48px);
+    color: #ffffff;
+    font-weight: 400;
+    line-height: 1.15;
+    margin-bottom: 10px;
+}
+
+.pp-hero-title em {
+    font-style: italic;
+    color: #93c5fd;
+}
+
+.pp-hero-sub {
+    font-size: 15px;
+    color: rgba(255, 255, 255, 0.75);
+    line-height: 1.6;
+}
+
+/* Back button */
+.pp-back-btn {
+    position: absolute;
+    top: 24px;
+    left: 24px;
+    z-index: 10;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+    background: rgba(255, 255, 255, 0.15);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    color: #ffffff;
+    font-size: 13px;
+    font-weight: 600;
+    padding: 8px 16px;
+    border-radius: 999px;
+    cursor: pointer;
+    transition: background 0.2s ease, transform 0.2s ease;
+    text-decoration: none;
+}
+
+.pp-back-btn:hover {
+    background: rgba(255, 255, 255, 0.28);
+    transform: translateX(-3px);
+}
+
+/* ─── Page Layout: sidebar + main ─── */
+.pp-layout {
+    display: grid;
+    grid-template-columns: 260px 1fr;
+    min-height: calc(100vh - 340px);
+    background: #f8fafc;
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 0 24px 80px;
+    gap: 0;
+}
+
+/* ─── Sidebar ─── */
+.pp-sidebar {
+    padding: 40px 0 40px 0;
+    border-right: 1px solid #e5e7eb;
+    position: sticky;
+    top: 72px;
+    height: fit-content;
+    max-height: calc(100vh - 72px);
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #cbd5e1 transparent;
+}
+
+.pp-sidebar-label {
+    font-size: 10px;
+    font-weight: 700;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    color: #94a3b8;
+    margin-bottom: 16px;
+    padding-left: 4px;
+}
+
+.pp-cat-tab {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    width: 100%;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 12px;
+    font-size: 14px;
+    font-weight: 500;
+    color: #475569;
+    text-align: left;
+    transition: all 0.2s ease;
+    margin-bottom: 4px;
+    position: relative;
+}
+
+.pp-cat-tab:hover {
+    background: #f1f5f9;
+    color: #0f172a;
+}
+
+.pp-cat-tab.active {
+    background: #eff6ff;
+    color: #1d4ed8;
+    font-weight: 700;
+}
+
+.pp-cat-tab-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: #cbd5e1;
+    flex-shrink: 0;
+    transition: background 0.2s ease;
+}
+
+.pp-cat-tab.active .pp-cat-tab-dot {
+    background: #3b82f6;
+}
+
+/* ─── Main area ─── */
+.pp-main {
+    padding: 40px 0 40px 40px;
+}
+
+/* Panel header banner */
+.pp-panel-head {
+    border-radius: var(--radius-lg, 16px);
+    overflow: hidden;
+    margin-bottom: 32px;
+    position: relative;
+    height: 160px;
+}
+
+.pp-panel-head-img {
+    position: relative;
+    height: 100%;
+}
+
+.pp-panel-head-img img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(0.55);
+}
+
+.pp-panel-head-overlay {
+    position: absolute;
+    inset: 0;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 0 32px;
+    background: linear-gradient(90deg, rgba(5, 14, 30, 0.7) 0%, transparent 80%);
+}
+
+.pp-panel-head-overlay h2 {
+    font-family: 'Instrument Serif', serif;
+    font-size: 28px;
+    color: #ffffff;
+    font-weight: 400;
+    margin-bottom: 4px;
+}
+
+.pp-panel-head-overlay p {
+    font-size: 13px;
+    color: rgba(255, 255, 255, 0.78);
+}
+
+/* Product grid on /products page */
+.pp-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 20px;
+}
+
+/* Clickable card variant */
+.pg-card--clickable {
+    cursor: pointer;
+}
+
+.pg-card--clickable:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+}
+
+/* WhatsApp category enquiry strip */
+.pp-cat-wa-wrap {
+    margin-top: 40px;
+    padding-top: 28px;
+    border-top: 1px solid #e5e7eb;
+}
+
+/* ─── Modal overlay alias ─── */
+/* ProductModal uses .pm-overlay instead of .product-modal-overlay */
+.pm-overlay {
+    position: fixed;
+    inset: 0;
+    z-index: 2000;
+    background: rgba(8, 18, 33, 0.7);
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 5%;
+    animation: pmFadeIn 0.35s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.pm-overlay .product-modal {
+    animation: pmSlideUp 0.45s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+@keyframes pmFadeIn {
+    from { opacity: 0; }
+    to   { opacity: 1; }
+}
+
+@keyframes pmSlideUp {
+    from { transform: scale(0.9) translateY(40px); opacity: 0; }
+    to   { transform: scale(1) translateY(0); opacity: 1; }
+}
+
+/* ─── Responsive: Products Page ─── */
+@media (max-width: 900px) {
+    .pp-layout {
+        grid-template-columns: 1fr;
+        padding: 0 16px 60px;
+    }
+
+    .pp-sidebar {
+        position: static;
+        border-right: none;
+        border-bottom: 1px solid #e5e7eb;
+        padding: 24px 16px;
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 12px;
+        max-height: none;
+        overflow-y: visible;
+    }
+
+    .pp-sidebar-label {
+        grid-column: 1 / -1;
+        margin-bottom: 8px;
+        text-align: center;
+    }
+
+    .pp-cat-tab {
+        width: 100%;
+        padding: 12px 12px;
+        font-size: 13px;
+        margin-bottom: 0;
+        border: 1px solid #e5e7eb;
+        justify-content: center;
+        text-align: center;
+        flex-direction: column;
+        gap: 6px;
+    }
+
+    .pp-cat-tab-dot {
+        margin: 0 auto;
+    }
+
+    .pp-cat-tab.active {
+        border-color: #3b82f6;
+    }
+
+    .pp-main {
+        padding: 24px 0;
+    }
+
+    .pp-hero-content {
+        padding: 0 24px;
+        max-width: 100%;
+        text-align: center;
+    }
+
+    .pp-hero-tag {
+        font-size: 10px;
+    }
+
+    .pp-hero-title {
+        font-size: clamp(22px, 6vw, 32px);
+        margin-bottom: 8px;
+    }
+
+    .pp-hero-sub {
+        font-size: 13px;
+    }
+
+    .pp-hero {
+        height: 260px;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .pp-panel-head {
+        height: 120px;
+    }
+
+    .pp-panel-head-overlay h2 {
+        font-size: 20px;
+    }
+
+    .pp-grid {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+        gap: 14px;
+    }
+
+    .pp-back-btn {
+        position: absolute;
+        top: 80px;
+        left: 50%;
+        transform: translateX(-50%);
+        z-index: 10;
+    }
+
+    .pp-back-btn:hover {
+        transform: translateX(-50%) translateY(-2px);
+    }
+}
+
+@media (max-width: 480px) {
+    .pp-back-btn span {
+        display: none;
+    }
+
+    .pp-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 12px;
+    }
 }
