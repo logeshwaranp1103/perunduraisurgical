@@ -1426,7 +1426,6 @@ nav.scrolled {
 .about-img {
     position: relative;
     z-index: 2;
-    margin-top: 50px;
     border-radius: var(--radius-lg);
     overflow: visible;
     box-shadow: none;
@@ -1476,6 +1475,12 @@ nav.scrolled {
     }
     .about-chip span {
         font-size: 9px;
+    }
+}
+
+@media(min-width: 1101px) {
+    .about-img {
+        margin-top: 50px;
     }
 }
 
@@ -3505,7 +3510,7 @@ footer {
 
     .contact-wrap {
         grid-template-columns: 1fr;
-        padding: 40px 20px;
+        padding: 64px 20px 40px;
     }
 
     .contact-left h2 {
@@ -3557,6 +3562,7 @@ footer {
 
     .footer-grid>.fg-col:last-child {
         grid-column: 1 / -1;
+        margin-top: 16px;
     }
 
     .footer-grid .fg-col h4 {
