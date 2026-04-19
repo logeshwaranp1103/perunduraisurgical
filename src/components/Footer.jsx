@@ -9,8 +9,8 @@ const Footer = () => {
   const isProductsPage = location.pathname === '/products';
 
   const handleLinkClick = (e, id) => {
+    if (e) e.preventDefault();
     if (location.pathname !== '/') {
-      e.preventDefault();
       navigate(`/#${id}`);
       return;
     }
@@ -38,7 +38,7 @@ const Footer = () => {
               </a>
               <p>Your trusted wholesale partner for pharmaceuticals and surgical products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2009.</p>
               <div className="hero-btns">
-                <a href="/#products" className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</a>
+                <a href={`${import.meta.env.BASE_URL}#products`} className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</a>
                 <a href="https://wa.me/919865271371" target="_blank" rel="noreferrer" className="btn-secondary">Message on WhatsApp</a>
               </div>
               <div className="foot-social visible">
@@ -63,23 +63,23 @@ const Footer = () => {
             <Reveal className="fg-col" animation="reveal-up" delay="0.1s">
               <h4>Quick Links</h4>
               <ul>
-                <li><a href="/#about" onClick={(e) => handleLinkClick(e, 'about')}>About Us</a></li>
-                <li><a href="/#products" onClick={(e) => handleLinkClick(e, 'products')}>Products</a></li>
-                <li><a href="/#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</a></li>
-                <li><a href="/#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</a></li>
-                <li><a href="/#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</a></li>
-                <li><a href="/#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#about`} onClick={(e) => handleLinkClick(e, 'about')}>About Us</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => handleLinkClick(e, 'products')}>Products</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#brands`} onClick={(e) => handleLinkClick(e, 'brands')}>Brands</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#services`} onClick={(e) => handleLinkClick(e, 'services')}>Services</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#licenses`} onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#contact-form`} onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</a></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-up" delay="0.2s">
               <h4>Products</h4>
               <ul>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'surgical'})); } else { navigate('/#products'); } }}>Surgical Instruments</a></li>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'wound'})); } else { navigate('/#products'); } }}>Wound Care</a></li>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'iv'})); } else { navigate('/#products'); } }}>IV & Infusion</a></li>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'diag'})); } else { navigate('/#products'); } }}>Diagnostics</a></li>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'ppe'})); } else { navigate('/#products'); } }}>PPE & Protection</a></li>
-                <li><a href="/#products" onClick={(e) => { if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'pharma'})); } else { navigate('/#products'); } }}>Pharmaceutical</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'surgical'})); } else { navigate('/#products'); } }}>Surgical Instruments</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'wound'})); } else { navigate('/#products'); } }}>Wound Care</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'iv'})); } else { navigate('/#products'); } }}>IV & Infusion</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'diag'})); } else { navigate('/#products'); } }}>Diagnostics</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'ppe'})); } else { navigate('/#products'); } }}>PPE & Protection</a></li>
+                <li><a href={`${import.meta.env.BASE_URL}#products`} onClick={(e) => { e.preventDefault(); if(location.pathname === '/') { scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'pharma'})); } else { navigate('/#products'); } }}>Pharmaceutical</a></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-right" delay="0.3s">
@@ -108,7 +108,7 @@ const Footer = () => {
           </div>
           <div className="footer-bottom">
             <p>© 2026 Perundurai Surgicals. All rights reserved. | Proprietor: K. Ragavendran B.E.</p>
-            <a href="/#home-strip" onClick={handleBackToTop} className="group inline-flex items-center justify-center gap-1 transition-all duration-300 hover:scale-105" style={{ textDecoration: 'none' }}>
+            <a href={`${import.meta.env.BASE_URL}#home-strip`} onClick={handleBackToTop} className="group inline-flex items-center justify-center gap-1 transition-all duration-300 hover:scale-105" style={{ textDecoration: 'none' }}>
               {isProductsPage ? 'Back to home' : 'Back to top'}
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-4 h-4 group-hover:animate-bounce">
                 {isProductsPage ? <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z" /> : <path d="M17 11l-5-5l-5 5M12 18V6" />}

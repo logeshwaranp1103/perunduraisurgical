@@ -16,6 +16,7 @@ const Navbar = () => {
 
   // Wrapper for navbar to also close mobile menu
   const handleNavClick = (e, id) => {
+    if (e) e.preventDefault();
     closeNav();
     
     if (location.pathname !== '/') {
@@ -72,14 +73,14 @@ const Navbar = () => {
 
   return (
     <nav id="topnav" className={scrolled ? 'scrolled' : ''}>
-      <a href="/#home-strip" className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
+      <a href={`${import.meta.env.BASE_URL}#home-strip`} className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
         <img src={assetUrl('PS-FULL-LOGO.png')} alt="Perundurai Surgicals" className="logo-img" />
       </a>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-        <li><a href="/#home-strip" className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</a></li>
-        <li><a href="/#about" className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
-        <li><a href="/#products" className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</a></li>
-        <li><a href="/#services" className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}#home-strip`} className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}#about`} className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}#products`} className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</a></li>
+        <li><a href={`${import.meta.env.BASE_URL}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">
@@ -88,7 +89,7 @@ const Navbar = () => {
           </svg>
           Contact
         </a>
-        <a href="/#contact-form" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</a>
+        <a href={`${import.meta.env.BASE_URL}#contact-form`} className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</a>
         <button className="hamburger" id="hamburger" onClick={toggleNav}>
           <span></span><span></span><span></span>
         </button>
