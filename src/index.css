@@ -471,10 +471,15 @@ nav.scrolled {
     transform: translate(0) scale(1) !important;
 }
 
+.hero-title-line em {
+  text-shadow: 0 3px 10px rgba(0, 0, 0, 0.35);
+}
+
 .hero-title-line {
     display: block;
     opacity: 0;
     transform: translateY(24px);
+    text-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
 }
 
 .hero-title-line:nth-child(1) {
@@ -2503,34 +2508,22 @@ footer {
     font-weight: 500;
 }
 
-@media (hover: hover) {
-    .fg-col ul a:hover {
-        background: linear-gradient(90deg, #c97a15 0%, #f0c36a 15%, #78b2f1 32.5%, #1a5fa8 50%, #c97a15 50%, #f0c36a 65%, #78b2f1 82.5%, #1a5fa8 100%);
-        background-size: 200% 100%;
-        -webkit-background-clip: text;
-        background-clip: text;
-        color: transparent !important;
-        -webkit-text-fill-color: transparent !important;
-        animation: logoGradientFlow 4.5s linear infinite;
-        filter: brightness(1.2);
-        font-weight: 700;
-        transform: scale(1.06);
-    }
+.fg-col ul a:hover {
+    color: #78b2f1 !important;
+    -webkit-text-fill-color: #78b2f1 !important;
+    font-weight: 600;
+    transform: translateX(4px);
 }
 
 .fg-col ul a:active {
-    color: rgba(255, 255, 255, 0.65) !important;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.65) !important;
-    background: none !important;
-    filter: none;
-    transform: none;
+    color: #78b2f1 !important;
+    -webkit-text-fill-color: #78b2f1 !important;
 }
 
 .fg-col ul a:visited,
 .fg-col ul a:focus {
-    color: rgba(255, 255, 255, 0.65) !important;
-    -webkit-text-fill-color: rgba(255, 255, 255, 0.65) !important;
-    background: none !important;
+    color: rgba(255, 255, 255, 0.65);
+    -webkit-text-fill-color: rgba(255, 255, 255, 0.65);
     outline: none;
 }
 
@@ -4136,6 +4129,8 @@ footer {
     flex-direction: column;
     align-items: flex-end;
     gap: 16px;
+    margin-top: -50px;
+    margin-right: 10px;
 }
 
 .ent-iso-badge {
