@@ -2,11 +2,8 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { assetUrl } from '../utils/assetUrl';
 
 const SLIDES = [
-  { src: 'images/3way-stopcock.webp', tag: 'IV & INFUSION', name: '3-Way Stopcock', desc: 'Dispoway 360° — HMD & Hindustan Syringes' },
-  { src: 'images/Alcohol-Swab.png', tag: 'WOUND CARE', name: 'Alcohol Swabs', desc: 'Dispocann — Isopropyl 70% v/v, 100 per box' },
   { src: 'images/Blades-and-Scalpel.jpg', tag: 'SURGICAL INSTRUMENTS', name: 'Scalpel & Blades', desc: 'TechnoCut — Sizes #10 #11 #15 #22 #23' },
   { src: 'images/blood-collection-tubes.webp', tag: 'DIAGNOSTICS', name: 'Blood Collection Tubes', desc: 'MB Vacuum K2 EDTA — 2ml & 3ml available' },
-  { src: 'images/bp-monitor.png', tag: 'DIAGNOSTICS', name: 'BP Monitor', desc: 'Romsons — Digital Upper Arm, Auto Memory' },
   { src: 'images/cannulas.png', tag: 'IV & INFUSION', name: 'IV Cannulas', desc: 'All gauges — Grey 16G to Yellow 24G' },
   { src: 'images/Disinfectants.avif', tag: 'INFECTION CONTROL', name: 'Disinfectants', desc: 'Hospital-grade surface & skin antiseptics' },
   { src: 'images/disposal-box.png', tag: 'WASTE MANAGEMENT', name: 'Safety Disposal Box', desc: 'Kojak HMD — WHO Standard Sharps Container' },
@@ -150,18 +147,17 @@ const HeroSlideshow = () => {
               <div className="hs-bg" style={{ backgroundImage: `url('${s.src}')` }}></div>
               <div className="hs-overlay"></div>
               <div className="hs-content">
-                <span className="hs-tag">{s.tag}</span>
-                <h3 className="hs-name">{s.name}</h3>
-                <p className="hs-desc">{s.desc}</p>
+                <div className="hs-text-box">
+                  <h3 className="hs-name">{s.name}</h3>
+                  <p className="hs-desc">{s.desc}</p>
+                </div>
                 <a href="#contact" className="hs-enquire">Enquire Now →</a>
               </div>
             </div>
           );
         })}
       </div>
-
-
-
+      
       <button className="hs-arrow hs-prev" aria-label="Previous" onClick={() => goTo((current - 1 + SLIDES.length) % SLIDES.length, true)}>
         <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5">
           <polyline points="15 18 9 12 15 6" />

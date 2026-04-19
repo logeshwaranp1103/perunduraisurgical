@@ -10,36 +10,70 @@ const Brands = () => {
         <p className="s-sub">We stock products from trusted, globally and nationally recognised medical brands.</p>
       </Reveal>
       <div className="brands-grid">
-        <Reveal className="brand-tile" animation="reveal-scale">
-          <div className="brand-logo-wrapper">
-            <img src={assetUrl('brands/romsonsorg.png')} alt="Romsons" />
+        <div className="marquee-track">
+          <Reveal className="brand-tile" animation="reveal-scale">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/romsonsorg.png')} alt="Romsons" />
+            </div>
+            <span className="status">Authorised</span>
+          </Reveal>
+          <Reveal className="brand-tile" animation="reveal-scale" delay="0.1s">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/sevana.png')} alt="Sevana" />
+            </div>
+            <span className="status">Authorised</span>
+          </Reveal>
+          <Reveal className="brand-tile" animation="reveal-scale" delay="0.2s">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/3M.webp')} alt="3M Health" />
+            </div>
+            <span className="status">Authorised</span>
+          </Reveal>
+          <Reveal className="brand-tile" animation="reveal-scale" delay="0.3s">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/puniska.png')} alt="Puniska" />
+            </div>
+            <span className="status">Authorised</span>
+          </Reveal>
+          <Reveal className="brand-tile" animation="reveal-scale" delay="0.4s">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/HMD.webp')} alt="HMD" />
+            </div>
+            <span className="status">Authorised</span>
+          </Reveal>
+          
+          {/* Duplicates for infinite scrolling */}
+          <div className="brand-tile duplicate">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/romsonsorg.png')} alt="Romsons" />
+            </div>
+            <span className="status">Authorised</span>
           </div>
-          <span className="status">Authorised</span>
-        </Reveal>
-        <Reveal className="brand-tile" animation="reveal-scale" delay="0.1s">
-          <div className="brand-logo-wrapper">
-            <img src={assetUrl('brands/sevana.png')} alt="Sevana" />
+          <div className="brand-tile duplicate">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/sevana.png')} alt="Sevana" />
+            </div>
+            <span className="status">Authorised</span>
           </div>
-          <span className="status">Authorised</span>
-        </Reveal>
-        <Reveal className="brand-tile" animation="reveal-scale" delay="0.2s">
-          <div className="brand-logo-wrapper">
-            <img src={assetUrl('brands/3M.webp')} alt="3M Health" />
+          <div className="brand-tile duplicate">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/3M.webp')} alt="3M Health" />
+            </div>
+            <span className="status">Authorised</span>
           </div>
-          <span className="status">Authorised</span>
-        </Reveal>
-        <Reveal className="brand-tile" animation="reveal-scale" delay="0.3s">
-          <div className="brand-logo-wrapper">
-            <img src={assetUrl('brands/puniska.png')} alt="Puniska" />
+          <div className="brand-tile duplicate">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/puniska.png')} alt="Puniska" />
+            </div>
+            <span className="status">Authorised</span>
           </div>
-          <span className="status">Authorised</span>
-        </Reveal>
-        <Reveal className="brand-tile" animation="reveal-scale" delay="0.4s">
-          <div className="brand-logo-wrapper">
-            <img src={assetUrl('brands/HMD.webp')} alt="HMD" />
+          <div className="brand-tile duplicate">
+            <div className="brand-logo-wrapper">
+              <img src={assetUrl('brands/HMD.webp')} alt="HMD" />
+            </div>
+            <span className="status">Authorised</span>
           </div>
-          <span className="status">Authorised</span>
-        </Reveal>
+        </div>
       </div>
     </section>
   );
