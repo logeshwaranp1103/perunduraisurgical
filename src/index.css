@@ -3351,6 +3351,13 @@ footer {
         padding: 16px 3%;
     }
 
+    @media (max-width: 480px) {
+        .stats-bar {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 20px 10px;
+        }
+    }
+
     .stat-num {
         font-size: 28px;
     }
@@ -4067,8 +4074,14 @@ footer {
 /* ── ENTERPRISE DETAILS ── */
 .ent-section {
     background: #f8fafc;
-    padding: 64px 24px 40px;
+    padding: 64px 16px 40px;
     font-family: 'Inter', sans-serif;
+}
+
+@media (min-width: 640px) {
+    .ent-section {
+        padding: 64px 24px 40px;
+    }
 }
 
 .ent-container {
@@ -4083,11 +4096,18 @@ footer {
 
 .ent-heading-tag {
     color: #2563eb;
-    font-size: 16px;
+    font-size: 14px;
     font-weight: 700;
-    letter-spacing: 0.4em;
+    letter-spacing: 0.2em;
     text-transform: uppercase;
-    margin-left: 0.4em;
+}
+
+@media (min-width: 640px) {
+    .ent-heading-tag {
+        font-size: 16px;
+        letter-spacing: 0.4em;
+        margin-left: 0.4em;
+    }
 }
 
 .ent-card {
@@ -4098,9 +4118,15 @@ footer {
 }
 
 .ent-main {
-    padding: 24px;
+    padding: 20px 15px;
     position: relative;
     background: #ffffff;
+}
+
+@media (min-width: 640px) {
+    .ent-main {
+        padding: 24px;
+    }
 }
 
 /* ── Branding ── */
@@ -4119,20 +4145,32 @@ footer {
 }
 
 .ent-logo-wrap {
-    max-width: 280px;
+    max-width: 240px;
+    margin: 0 auto;
 }
 
-.ent-logo-img {
-    width: 100%;
-    height: auto;
+@media (min-width: 640px) {
+    .ent-logo-wrap {
+        max-width: 280px;
+        margin: 0;
+    }
 }
 
 .ent-tagline {
     color: #43474f;
-    font-size: 14px;
+    font-size: 12px;
     text-transform: uppercase;
-    letter-spacing: 0.15em;
+    letter-spacing: 0.1em;
     font-weight: 600;
+    text-align: center;
+}
+
+@media (min-width: 640px) {
+    .ent-tagline {
+        font-size: 14px;
+        letter-spacing: 0.15em;
+        text-align: left;
+    }
 }
 
 .ent-brand-right {
@@ -4145,17 +4183,20 @@ footer {
 .ent-iso-badge {
     background: #ffdad6;
     color: #93000e;
-    padding: 8px 16px;
+    padding: 6px 12px;
     border-radius: 8px;
     font-weight: 700;
-    font-size: 12px;
+    font-size: 11px;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     display: flex;
     align-items: center;
-    gap: 8px;
+    gap: 6px;
     height: fit-content;
-    flex-shrink: 0;
+    flex-shrink: 1;
+    overflow: hidden;
+    white-space: nowrap;
+    text-overflow: ellipsis;
 }
 
 .ent-iso-badge svg {
@@ -4265,11 +4306,24 @@ footer {
 /* ── Stats Row ── */
 .ent-stats-row {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 0;
     border: 1px solid #e3e2e7;
     border-radius: 16px;
     overflow: hidden;
+}
+
+@media (max-width: 380px) {
+    .ent-stats-row {
+        grid-template-columns: repeat(2, 1fr);
+    }
+    .ent-stat:last-child {
+        grid-column: span 2;
+        border-top: 1px solid #e3e2e7;
+    }
+    .ent-stat-border:nth-child(2) {
+        border-right: none;
+    }
 }
 
 .ent-stat {
@@ -4302,11 +4356,19 @@ footer {
 
 .ent-stat-lbl {
     color: #747781;
-    font-size: 9px;
+    font-size: 8px;
     font-weight: 600;
     text-transform: uppercase;
-    letter-spacing: 0.1em;
+    letter-spacing: 0.05em;
     margin-top: 4px;
+    line-height: 1.2;
+}
+
+@media (min-width: 480px) {
+    .ent-stat-lbl {
+        font-size: 9px;
+        letter-spacing: 0.1em;
+    }
 }
 
 /* ── Right Column: Contact Card ── */
