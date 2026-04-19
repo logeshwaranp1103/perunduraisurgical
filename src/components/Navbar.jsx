@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { useLocation, useNavigate, Link } from 'react-router-dom';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
 import { assetUrl } from '../utils/assetUrl';
 
@@ -16,18 +16,15 @@ const Navbar = () => {
 
   // Wrapper for navbar to also close mobile menu
   const handleNavClick = (e, id) => {
-    if (e) e.preventDefault();
     closeNav();
     
-    if (location.pathname !== '/') {
-      // If not on homepage, navigate there with the hash
-      navigate(`/#${id}`);
-      return;
+    if (location.pathname === '/' || location.pathname === '') {
+      // On homepage, prevent standard navigation and smooth scroll
+      if (e) e.preventDefault();
+      setActiveSection(id);
+      scrollToId(null, id);
     }
-
-    // Update underline and scroll
-    setActiveSection(id);
-    scrollToId(e, id);
+    // If not on homepage, let the <Link> component handle navigation to the home page with hash
   };
 
   useEffect(() => {
@@ -73,14 +70,14 @@ const Navbar = () => {
 
   return (
     <nav id="topnav" className={scrolled ? 'scrolled' : ''}>
-      <a href={`${import.meta.env.BASE_URL}#home-strip`} className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
+      <Link to="/#home-strip" className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
         <img src={assetUrl('PS-FULL-LOGO.png')} alt="Perundurai Surgicals" className="logo-img" />
-      </a>
+      </Link>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-        <li><a href={`${import.meta.env.BASE_URL}#home-strip`} className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</a></li>
-        <li><a href={`${import.meta.env.BASE_URL}#about`} className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</a></li>
-        <li><a href={`${import.meta.env.BASE_URL}#products`} className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</a></li>
-        <li><a href={`${import.meta.env.BASE_URL}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</a></li>
+        <li><Link to="/#home-strip" className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</Link></li>
+        <li><Link to="/#about" className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</Link></li>
+        <li><Link to="/#products" className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</Link></li>
+        <li><Link to="/#services" className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">
@@ -89,7 +86,7 @@ const Navbar = () => {
           </svg>
           Contact
         </a>
-        <a href={`${import.meta.env.BASE_URL}#contact-form`} className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</a>
+        <Link to="/#contact-form" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</Link>
         <button className="hamburger" id="hamburger" onClick={toggleNav}>
           <span></span><span></span><span></span>
         </button>
