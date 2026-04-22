@@ -48,7 +48,7 @@ const About = () => {
               </div>
               <div className="fact-text">
                 <strong>Strategic Location</strong>
-                <p><span className="fact-value">Based in Perundurai,</span> the heart of Erode's healthcare hub.</p>
+                <p>Based in Perundurai, the heart of Erode's healthcare hub.</p>
               </div>
             </Reveal>
             <Reveal as="li" className="about-fact" animation="reveal-up" delay="0.2s" threshold={0.1}>
@@ -57,7 +57,7 @@ const About = () => {
               </div>
               <div className="fact-text">
                 <strong>Swift Operations</strong>
-                <p><span className="fact-value">Mon–Sat: 9:00 AM – 7:00 PM.</span> Local same-day dispatch.</p>
+                <p>Mon–Sat: 9:00 AM – 7:00 PM. Local same-day dispatch.</p>
               </div>
             </Reveal>
           </ul>
