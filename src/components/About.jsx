@@ -15,15 +15,15 @@ const About = () => {
 
         <Reveal className="about-visual" animation="reveal-left">
           <div className="about-img" style={{ background: 'none', padding: 0 }}>
-            <img src="https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800&q=85&auto=format&fit=crop"
-              alt="Medical warehouse and storage"
+            <img src="public/proprietor-img.jpeg"
+              alt="Proprietor"
               style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }} loading="lazy" />
             <div className="about-chip">
               <strong>2009</strong>
               <span>Est. Since</span>
             </div>
           </div>
-          <div className="text-center" style={{ position: 'relative', zIndex: 10, marginTop: '12px', marginBottom: '4px' }}>
+          <div className="text-center" style={{ position: 'relative', zIndex: 10, marginTop: '-10px', marginBottom: '4px' }}>
             <a href="#enterprise" onClick={(e) => scrollToId(e, 'enterprise')} style={{ textDecoration: 'none' }} className="about-enterprise-link text-xs font-bold uppercase tracking-[0.15em] transition-all duration-300 flex items-center justify-center gap-2">
               <span>Associated with Thiyash Enterprise</span>
               <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className="w-3.5 h-3.5 hover-bounce-arrow">
@@ -38,7 +38,7 @@ const About = () => {
             <span className="s-tag">About Us</span>
             <h2 className="s-title">Rooted in <em>Perundurai,</em><br />Serving Tamil Nadu</h2>
           </div>
-          <p className="s-sub">Perundurai Surgicals is a leading wholesale distributor of pharmaceutical and surgical products based in Perundurai, Erode District. We cater to government hospitals, private clinics, nursing homes, and retail pharmacies with genuine, quality-assured products.</p>
+          <p className="s-sub">Perundurai Surgicals is a leading wholesale distributor of pharmaceutical and surgical products, proudly based in Perundurai, Erode District, Tamil Nadu. We specialize in supplying medicines, surgical instruments, medical consumables, and hospital supplies to government hospitals, private clinics, nursing homes, and retail pharmacies across the region. Every product in our inventory is sourced from licensed, government-approved manufacturers, ensuring genuine quality and full regulatory compliance with CDSCO and Tamil Nadu Drug Control Department guidelines. At Perundurai Surgicals, we are committed to delivering the right product at the right time, with competitive pricing and reliable service, making us a trusted partner in the regional healthcare supply chain.</p>
           <ul className="about-facts">
             <Reveal as="li" className="about-fact" animation="reveal-up" threshold={0.1}>
               <div className="fact-icon">

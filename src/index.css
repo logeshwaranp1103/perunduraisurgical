@@ -192,8 +192,10 @@ nav.scrolled {
     position: relative;
 }
 
-.nav-links a:hover {
-    color: #1A5FA8;
+@media (hover: hover) {
+    .nav-links a:hover {
+        color: #1A5FA8;
+    }
 }
 
 .nav-links a.active {
@@ -224,8 +226,10 @@ nav.scrolled {
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
-.nav-links a:hover::after {
-    transform: scaleX(1);
+@media (hover: hover) {
+    .nav-links a:hover::after {
+        transform: scaleX(1);
+    }
 }
 
 .nav-right {
@@ -600,10 +604,12 @@ nav.scrolled {
     }
 }
 
-.btn-primary:hover {
-    background: #A86010;
-    transform: translateY(-3px);
-    box-shadow: 0 12px 24px rgba(201, 122, 21, 0.4);
+@media (hover: hover) {
+    .btn-primary:hover {
+        background: #A86010;
+        transform: translateY(-3px);
+        box-shadow: 0 12px 24px rgba(201, 122, 21, 0.4);
+    }
 }
 
 .btn-secondary {
@@ -622,9 +628,11 @@ nav.scrolled {
     transition: background 0.3s, border-color 0.3s;
 }
 
-.btn-secondary:hover {
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(255, 255, 255, 0.6);
+@media (hover: hover) {
+    .btn-secondary:hover {
+        background: rgba(255, 255, 255, 0.1);
+        border-color: rgba(255, 255, 255, 0.6);
+    }
 }
 
 /* RIGHT COLUMN CARD */
@@ -1232,6 +1240,10 @@ nav.scrolled {
     padding-top: 20px;
 }
 
+#about.section {
+    padding-top: 10px;
+}
+
 .section.alt {
     background: var(--bg);
 }
@@ -1253,6 +1265,7 @@ nav.scrolled {
     line-height: 1.25;
     font-weight: 400;
     margin-bottom: 10px;
+    letter-spacing: 1px;
 }
 
 .s-title em {
@@ -1437,6 +1450,7 @@ nav.scrolled {
 
 .about-img {
     position: relative;
+    top: -50px;
     z-index: 2;
     border-radius: var(--radius-lg);
     overflow: visible;
@@ -2453,6 +2467,7 @@ footer {
     background: var(--navy);
     padding: 100px 5% 0;
     color: var(--white);
+    margin-top: 15px;
 }
 
 .footer-grid {
@@ -2461,6 +2476,7 @@ footer {
     gap: 64px;
     padding-bottom: 48px;
     border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    margin-top: -50px;
 }
 
 .fg-about p {
@@ -2489,10 +2505,12 @@ footer {
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
-.foot-social a:hover {
-    background: var(--blue);
-    transform: translateY(-5px);
-    box-shadow: 0 8px 20px rgba(26, 95, 168, 0.35);
+@media (hover: hover) {
+    .foot-social a:hover {
+        background: var(--blue);
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(26, 95, 168, 0.35);
+    }
 }
 
 .foot-social svg {
@@ -2525,16 +2543,17 @@ footer {
     font-weight: 500;
 }
 
-.fg-col ul a:hover {
-    color: #78b2f1 !important;
-    -webkit-text-fill-color: #78b2f1 !important;
-    font-weight: 600;
-    transform: translateX(4px);
+@media (hover: hover) {
+    .fg-col ul a:hover {
+        color: #78b2f1 !important;
+        -webkit-text-fill-color: #78b2f1 !important;
+        font-weight: 600;
+        transform: translateX(4px);
+    }
 }
 
 .fg-col ul a:active {
-    color: #78b2f1 !important;
-    -webkit-text-fill-color: #78b2f1 !important;
+    opacity: 0.7;
 }
 
 .fg-col ul a:visited,
@@ -2619,8 +2638,10 @@ footer {
     transition: color 0.3s ease;
 }
 
-.footer-bottom a:hover {
-    color: var(--blue-light);
+@media (hover: hover) {
+    .footer-bottom a:hover {
+        color: var(--blue-light);
+    }
 }
 
 
@@ -3078,11 +3099,17 @@ footer {
 
     .footer-grid {
         grid-template-columns: 1fr 1fr;
+        margin-top: 0;
     }
 
     .about-grid {
         grid-template-columns: 1fr;
         gap: 24px;
+    }
+
+    .about-img {
+        top: 0;
+        margin-bottom: 20px;
     }
 
     .desktop-about-title {
@@ -3092,7 +3119,7 @@ footer {
     .mobile-about-title {
         display: block !important;
         text-align: center;
-        margin-bottom: 8px;
+        margin-bottom: -10px;
     }
 
     /* Disable hover effects on mobile */
@@ -3579,6 +3606,7 @@ footer {
         grid-template-columns: 1fr 1fr;
         gap: 20px 20px;
         padding-bottom: 12px;
+        margin-top: 0;
     }
 
     .footer-grid .fg-about {
@@ -4348,23 +4376,23 @@ footer {
 /* ── Stats Row ── */
 .ent-stats-row {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+    grid-template-columns: repeat(3, 1fr);
     gap: 0;
     border: 1px solid #e3e2e7;
     border-radius: 16px;
     overflow: hidden;
 }
 
-@media (max-width: 400px) {
-    .ent-stats-row {
-        grid-template-columns: 1fr;
-    }
+/* Override previous stacking logic for enterprise stats */
+@media (max-width: 480px) {
     .ent-stat {
-        border-right: none !important;
-        border-bottom: 1px solid #e3e2e7;
+        padding: 12px 4px;
     }
-    .ent-stat:last-child {
-        border-bottom: none;
+    .ent-stat-num {
+        font-size: 16px;
+    }
+    .ent-stat-lbl {
+        font-size: 7px;
     }
 }
 
@@ -4935,9 +4963,11 @@ footer {
     cursor: pointer;
 }
 
-.pg-card--clickable:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+@media (hover: hover) {
+    .pg-card--clickable:hover {
+        transform: translateY(-4px);
+        box-shadow: 0 12px 36px rgba(0, 0, 0, 0.12);
+    }
 }
 
 /* WhatsApp category enquiry strip */

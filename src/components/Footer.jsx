@@ -31,7 +31,7 @@ const Footer = () => {
           <div className="footer-grid">
             <Reveal className="fg-about" animation="reveal-left">
               <Link to="/#home-strip" className="logo" style={{ display: 'inline-block' }} onClick={(e) => handleLinkClick(e, 'home-strip')}>
-                <img src={`${import.meta.env.BASE_URL}PS-FULL-LOGO.png`} alt="Perundurai Surgicals" style={{ height: '75px', width: 'auto', objectFit: 'contain', display: 'block' }} /> 
+                <img src={`${import.meta.env.BASE_URL}PS-FULL-LOGO.png`} alt="Perundurai Surgicals" className="logo-img" style={{ objectFit: 'contain' }} /> 
               </Link>
               <p>Your trusted wholesale partner for pharmaceuticals and surgical products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2009.</p>
               <div className="hero-btns">
