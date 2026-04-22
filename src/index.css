@@ -526,6 +526,9 @@ nav.scrolled {
     line-height: 1.75;
     max-width: 520px;
     margin-bottom: 32px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
     opacity: 0;
     animation: fadeInUp 0.6s cubic-bezier(0.22, 1, 0.36, 1) 0.9s forwards;
 }
@@ -1279,6 +1282,9 @@ nav.scrolled {
     color: var(--text-soft);
     line-height: 1.75;
     max-width: 520px;
+    text-align: justify;
+    text-justify: inter-word;
+    hyphens: auto;
 }
 
 .s-head {
@@ -1520,13 +1526,14 @@ nav.scrolled {
 
 .about-fact {
     display: flex;
-    gap: 20px;
-    padding: 20px;
+    align-items: center;
+    gap: 16px;
+    padding: 16px;
     background: var(--white);
     border-radius: var(--radius);
-    box-shadow: var(--shadow-soft);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.04);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
-    border: 1px solid transparent;
+    border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 .about-fact:hover {
@@ -1542,14 +1549,15 @@ nav.scrolled {
 }
 
 .fact-icon {
-    width: 48px;
-    height: 48px;
-    background: var(--blue-light);
-    border-radius: 12px;
+    width: 44px;
+    height: 44px;
+    background: #F1F5F9;
+    border-radius: 10px;
     display: flex;
     align-items: center;
     justify-content: center;
     flex-shrink: 0;
+    color: var(--text-mid);
     transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
 }
 
@@ -1575,11 +1583,14 @@ nav.scrolled {
     line-height: 1.5;
 }
 
+.fact-value {
+    font-weight: 700;
+    color: var(--navy);
+}
+
 .proprietor-name {
-    font-family: 'Playfair Display', serif;
-    font-weight: 800;
-    font-size: 18px;
-    letter-spacing: 0.9px;
+    font-weight: 700;
+    color: var(--navy);
 }
 
 /* ── PRODUCTS ── */
@@ -3112,7 +3123,22 @@ footer {
 
     .about-grid {
         grid-template-columns: 1fr;
-        gap: 24px;
+        gap: 32px;
+    }
+
+    .about-facts {
+        gap: 16px;
+        padding-bottom: 40px; /* Space for WhatsApp button */
+    }
+
+    .about-fact {
+        padding: 16px;
+        gap: 12px;
+    }
+
+    .fact-icon {
+        width: 40px;
+        height: 40px;
     }
 
     .about-img {
