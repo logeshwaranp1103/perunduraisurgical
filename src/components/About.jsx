@@ -1,5 +1,6 @@
 import Reveal from './Reveal';
 import { useSmoothScroll } from '../hooks/useSmoothScroll';
+import { assetUrl } from '../utils/assetUrl';
 
 const About = () => {
   const scrollToId = useSmoothScroll();
@@ -15,7 +16,7 @@ const About = () => {
 
         <Reveal className="about-visual" animation="reveal-left">
           <div className="about-img" style={{ background: 'none', padding: 0 }}>
-            <img src="../proprietor-img.jpeg"
+            <img src={assetUrl('proprietor-img.jpeg')}
               alt="Proprietor"
               style={{ width: '100%', height: '100%', objectFit: 'cover', borderRadius: 'var(--radius-lg)' }} loading="lazy" />
             <div className="about-chip">
