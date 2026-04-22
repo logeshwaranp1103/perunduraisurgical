@@ -72,7 +72,7 @@ const Contact = () => {
               <div className="cf-icon"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" /><circle cx="12" cy="10" r="3" /></svg></div>
               <div>
                 <div className="cf-lbl">Visit Us</div>
-                <div className="cf-val">88/10, Thendral Nagar, Perundurai</div>
+                <div className="cf-val">88/10, Thendral Nagar, Chenniyavalasu Road, Perundurai - 638052</div>
               </div>
             </Reveal>
           </div>

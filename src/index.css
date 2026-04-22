@@ -318,7 +318,7 @@ nav.scrolled {
     position: relative;
     display: flex;
     align-items: center;
-    padding: 80px 5% 120px;
+    padding: 45px 5% 120px;
     padding-bottom: 90px;
     background: linear-gradient(135deg, #071A3E 0%, #0C3470 40%, #1A5FA8 100%);
     overflow: clip !important;
@@ -393,7 +393,7 @@ nav.scrolled {
 
 .hero-wave {
     position: absolute;
-    bottom: 0;
+    bottom: -1px;
     left: 0;
     width: 100%;
     line-height: 0;
@@ -543,6 +543,7 @@ nav.scrolled {
     display: flex;
     align-items: center;
     gap: 8px;
+    margin-bottom: -20px;
     color: rgba(255, 255, 255, 0.85);
     font-size: 13px;
     font-family: 'DM Sans', sans-serif;
@@ -1572,6 +1573,13 @@ nav.scrolled {
     font-size: 13.5px;
     color: var(--text);
     line-height: 1.5;
+}
+
+.proprietor-name {
+    font-family: 'Playfair Display', serif;
+    font-weight: 800;
+    font-size: 18px;
+    letter-spacing: 0.9px;
 }
 
 /* ── PRODUCTS ── */

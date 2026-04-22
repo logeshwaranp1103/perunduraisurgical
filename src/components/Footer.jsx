@@ -86,7 +86,7 @@ const Footer = () => {
                   <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z" />
                   <circle cx="12" cy="10" r="3" />
                 </svg>
-                <p>88/10, Thendral Nagar, Perundurai – 638 052</p>
+                <p>88/10, Thendral Nagar, Chenniyavalasu Road, Perundurai – 638 052</p>
               </div>
               <div className="foot-ci">
                 <svg viewBox="0 0 24 24">

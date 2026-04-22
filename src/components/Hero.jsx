@@ -10,7 +10,6 @@ const Hero = () => {
   useEffect(() => {
     const heroEl = heroRef.current;
     if (!heroEl) return undefined;
-    let touchTimeout;
 
     const setMousePosition = (clientX, clientY) => {
       const rect = heroEl.getBoundingClientRect();
@@ -56,9 +55,8 @@ const Hero = () => {
           <div className="hero-badge visible">Verified Wholesale Supply</div>
           <h1 className="hero-title-line visible" style={{ transitionDelay: '0.1s'}}>Your Trusted Partner</h1>
           <h1 className="hero-title-line visible" style={{ marginTop: '-15px', transitionDelay: '0.2s' }}><span style={{color: '#E5E7EB'}}>for</span> <em style={{ color: '#F59E0B' }}>Surgical & Pharma</em></h1>
-          <p className="hero-sub visible" style={{ transitionDelay: '0.3s', color: '#D1D5DB' }}>
-            Perundurai Surgicals supplies government hospitals, private clinics, and retail pharmacies
-            across Erode district with 500+ genuine, licensed medical products at the most competitive wholesale prices.
+          <p className="hero-sub visible" style={{ transitionDelay: '0.3s', color: '#D1D5DB', fontSize: '20px'}}>
+            Perundurai Surgicals supplies government hospitals, private hospitals, clinics, and retail pharmacies across Erode, Tirupur, Salem, Coimbatore, and Namakkal districts with 1000+ genuine, licensed medical products at the most competitive wholesale prices.
           </p>
 
           <div className="hero-value-props">
