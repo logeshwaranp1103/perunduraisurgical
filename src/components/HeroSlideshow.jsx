@@ -38,9 +38,14 @@ const HeroSlideshow = () => {
     
     transitioningRef.current = true;
     setOldSlide(current);
-    let type = window.innerWidth < 768 ? 'slide-over' : TRANSITIONS[transIdxRef.current % TRANSITIONS.length];
+
+    let type;
     if (isReverse) {
       type = 'slide-over-reverse';
+    } else if (window.innerWidth < 768) {
+      type = 'slide-over';
+    } else {
+      type = TRANSITIONS[transIdxRef.current % TRANSITIONS.length];
     }
     transIdxRef.current++;
     setTransClass(type);
