@@ -3277,6 +3277,17 @@ footer {
         padding: 14px;
     }
 
+    .pcd-enquire {
+        padding: 10px 12px;
+        font-size: 13px;
+        gap: 8px;
+    }
+
+    .pcd-enquire svg {
+        width: 16px;
+        height: 16px;
+    }
+
     .pg-info strong {
         font-size: 11px;
     }
