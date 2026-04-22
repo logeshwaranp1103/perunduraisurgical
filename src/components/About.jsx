@@ -39,7 +39,7 @@ const About = () => {
               </div>
               <div className="fact-text">
                 <strong>Proprietor</strong>
-                <p><span className="proprietor-name">K. Ragavendran</span> B.E. — Over 10 years of industry expertise.</p>
+                <p><span className="fact-value"><span className="proprietor-name">K. Ragavendran</span> B.E.</span> — Over 10 years of industry expertise.</p>
               </div>
             </Reveal>
             <Reveal as="li" className="about-fact" animation="reveal-up" delay="0.1s" threshold={0.1}>
@@ -48,7 +48,7 @@ const About = () => {
               </div>
               <div className="fact-text">
                 <strong>Strategic Location</strong>
-                <p>Based in Perundurai, the heart of Erode's healthcare hub.</p>
+                <p><span className="fact-value">Based in Perundurai,</span> the heart of Erode's healthcare hub.</p>
               </div>
             </Reveal>
             <Reveal as="li" className="about-fact" animation="reveal-up" delay="0.2s" threshold={0.1}>
@@ -57,7 +57,7 @@ const About = () => {
               </div>
               <div className="fact-text">
                 <strong>Swift Operations</strong>
-                <p>Mon–Sat: 9:00 AM – 7:00 PM. Local same-day dispatch.</p>
+                <p><span className="fact-value">Mon–Sat: 9:00 AM – 7:00 PM.</span> Local same-day dispatch.</p>
               </div>
             </Reveal>
           </ul>
