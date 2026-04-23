@@ -66,31 +66,29 @@ export default function ProductsPage() {
         </button>
       </div>
 
-      {/* ─── Search Bar + Search Results ─── */}
-      <div className="pp-search-wrapper">
-        <ProductSearch 
-          query={searchQuery} 
-          onQueryChange={(val) => {
-            setSearchQuery(val);
-            if (val.trim()) {
-              const query = val.trim().toLowerCase();
-              const firstMatch = allProducts.find(p => 
-                p.name.toLowerCase().includes(query) || 
-                p.category.toLowerCase().includes(query)
-              );
-              if (firstMatch && firstMatch.catId !== activeCat) {
-                setActiveCat(firstMatch.catId);
-              }
-            }
-          }} 
-        />
-      </div>
-
       {/* ─── Main Layout ─── */}
       <div className="pp-layout">
 
           {/* ─── Sidebar: category tabs ─── */}
           <aside className="pp-sidebar" aria-label="Product categories">
+            <div className="pp-sidebar-search">
+              <ProductSearch 
+                query={searchQuery} 
+                onQueryChange={(val) => {
+                  setSearchQuery(val);
+                  if (val.trim()) {
+                    const query = val.trim().toLowerCase();
+                    const firstMatch = allProducts.find(p => 
+                      p.name.toLowerCase().includes(query) || 
+                      p.category.toLowerCase().includes(query)
+                    );
+                    if (firstMatch && firstMatch.catId !== activeCat) {
+                      setActiveCat(firstMatch.catId);
+                    }
+                  }
+                }} 
+              />
+            </div>
             <p className="pp-sidebar-label">Categories</p>
             {categories.map((cat) => (
               <button
