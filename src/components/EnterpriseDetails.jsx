@@ -2,10 +2,10 @@ import Reveal from './Reveal';
 
 const EnterpriseDetails = () => {
   return (
-    <section id="enterprise" className="ent-section">
+    <section className="ent-section">
       <div className="ent-container">
         <Reveal animation="reveal-up">
-          <div className="ent-heading">
+          <div id="enterprise" className="ent-heading">
             <span className="ent-heading-tag">Associated Enterprise</span>
           </div>
         </Reveal>

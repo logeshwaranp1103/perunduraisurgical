@@ -2186,6 +2186,7 @@ nav.scrolled {
     font-size: 15px;
     transition: all 0.3s ease;
     color-scheme: dark;
+    resize: vertical;
 }
 
 .fg select {
@@ -4136,7 +4137,6 @@ footer {
     #f-msg {
         height: 48px;
         min-height: 48px;
-        resize: vertical;
     }
 
     #f-msg::placeholder {
@@ -5311,6 +5311,8 @@ footer {
     border-radius: 20px;
     cursor: pointer;
     text-align: center;
+    text-decoration: none;
+    color: inherit;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
     transition:
         transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),

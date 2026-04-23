@@ -20,7 +20,7 @@ import { useSmoothScroll } from '../hooks/useSmoothScroll';
 
 export default function HomePage() {
   const location = useLocation();
-  const scrollToId = useSmoothScroll();
+  const scrollToId = useSmoothScroll(68);
 
   useEffect(() => {
     if (location.hash) {
@@ -28,7 +28,7 @@ export default function HomePage() {
       // Small timeout to ensure DOM is ready and Reveal animations don't interfere too much
       const timeout = setTimeout(() => {
         scrollToId(null, id);
-      }, 100);
+      }, 300);
       return () => clearTimeout(timeout);
     }
   }, [location.hash, scrollToId]);

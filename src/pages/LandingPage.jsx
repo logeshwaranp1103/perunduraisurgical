@@ -1,4 +1,5 @@
-import { useNavigate } from 'react-router-dom';
+import { useState, useEffect } from 'react';
+import { Link, useNavigate } from 'react-router-dom';
 
 const psLogo = `${import.meta.env.BASE_URL}PS-FULL-LOGO.png`;
 const thiyashLogo = `${import.meta.env.BASE_URL}thiyash-logo.png`;
@@ -18,7 +19,7 @@ const businesses = [
     logo: thiyashLogo,
     title: 'Thiyash Enterprise',
     subtitle: 'Manufacturer of Housekeeping Products',
-    path: '/enterprise',
+    path: '/surgicals#enterprise',
     accent: '#dc2626',
     tag: 'Housekeeping',
   },
@@ -26,7 +27,25 @@ const businesses = [
 
 export default function LandingPage() {
   const navigate = useNavigate();
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener('resize', handleResize);
+    return () => window.removeEventListener('resize', handleResize);
+  }, []);
+
+  const handleCardClick = (e, biz) => {
+    // Check innerWidth directly for maximum accuracy during the click event
+    const mobile = window.innerWidth <= 768;
+    if (!mobile && biz.id === 'enterprise') {
+      // Desktop: Go to surgicals and scroll to enterprise
+      navigate('/surgicals#enterprise');
+    } else {
+      // Mobile or Surgicals: Go to the respective root path
+      navigate(biz.id === 'enterprise' ? '/enterprise' : '/surgicals');
+    }
+  };
   return (
     <div className="lp-root">
       {/* Subtle background pattern */}
@@ -47,8 +66,8 @@ export default function LandingPage() {
           {businesses.map((biz) => (
             <button
               key={biz.id}
+              onClick={(e) => handleCardClick(e, biz)}
               className="lp-card"
-              onClick={() => navigate(biz.path)}
               aria-label={`Go to ${biz.title}`}
               style={{ '--accent': biz.accent }}
             >
