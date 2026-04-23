@@ -18,7 +18,7 @@ const Navbar = () => {
   const handleNavClick = (e, id) => {
     closeNav();
     
-    if (location.pathname === '/' || location.pathname === '') {
+    if (location.pathname === '/surgicals' || location.pathname === '/enterprise') {
       // On homepage, prevent standard navigation and smooth scroll
       if (e) e.preventDefault();
       setActiveSection(id);
@@ -27,8 +27,15 @@ const Navbar = () => {
     // If not on homepage, let the <Link> component handle navigation to the home page with hash
   };
 
+  const getBasePath = () => {
+    if (location.pathname.startsWith('/enterprise')) return '/enterprise';
+    if (location.pathname.startsWith('/surgicals')) return '/surgicals';
+    return '/surgicals';
+  };
+  const basePath = getBasePath();
+
   useEffect(() => {
-    if (location.pathname !== '/') {
+    if (location.pathname !== '/surgicals' && location.pathname !== '/enterprise') {
       setActiveSection(''); // No active section line on sub-pages
       return;
     }
@@ -70,14 +77,14 @@ const Navbar = () => {
 
   return (
     <nav id="topnav" className={scrolled ? 'scrolled' : ''}>
-      <Link to="/#home-strip" className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
+      <Link to={`${basePath}#home-strip`} className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
         <img src={assetUrl('PS-FULL-LOGO.png')} alt="Perundurai Surgicals" className="logo-img" />
       </Link>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
-        <li><Link to="/#home-strip" className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</Link></li>
-        <li><Link to="/#about" className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</Link></li>
-        <li><Link to="/#products" className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</Link></li>
-        <li><Link to="/#services" className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
+        <li><Link to={`${basePath}#home-strip`} className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</Link></li>
+        <li><Link to={`${basePath}#about`} className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</Link></li>
+        <li><Link to={`${basePath}#products`} className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</Link></li>
+        <li><Link to={`${basePath}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">
@@ -86,7 +93,7 @@ const Navbar = () => {
           </svg>
           Contact
         </a>
-        <Link to="/#contact-form" className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</Link>
+        <Link to={`${basePath}#contact-form`} className="nav-cta" onClick={(e) => handleNavClick(e, 'contact-form')}>Get Quote</Link>
         <button className="hamburger" id="hamburger" onClick={toggleNav}>
           <span></span><span></span><span></span>
         </button>

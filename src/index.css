@@ -1282,7 +1282,7 @@ nav.scrolled {
     color: var(--text-soft);
     line-height: 1.75;
     max-width: 520px;
-    text-align: justify;
+    text-align: center;
     text-justify: inter-word;
     hyphens: auto;
 }
