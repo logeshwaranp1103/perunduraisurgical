@@ -3827,8 +3827,8 @@ footer {
     }
 
     .pg-card {
-        padding: 8px;
-        border-radius: 8px;
+        padding: 12px; /* Reduced padding on small mobile */
+        border-radius: 12px;
     }
 
     .pg-info strong {
@@ -4808,7 +4808,7 @@ footer {
     background-position: center;
     transition: background-image 0.5s ease;
     transform: scale(1.05);
-    filter: brightness(0.70);
+    filter: brightness(0.55);
 }
 
 .pp-hero-overlay {
@@ -4898,13 +4898,14 @@ footer {
 
 /* ─── Sidebar ─── */
 .pp-sidebar {
-    padding: 40px 0 40px 0;
+    padding: 40px 16px; /* Added horizontal padding to prevent clipping on desktop */
     border-right: 1px solid #e5e7eb;
     position: sticky;
     top: 72px;
     height: fit-content;
     max-height: calc(100vh - 72px);
     overflow-y: auto;
+    overflow-x: hidden; /* Prevent horizontal scrollbars but allow for padding room */
     scrollbar-width: thin;
     scrollbar-color: #cbd5e1 transparent;
 }
@@ -5080,12 +5081,13 @@ footer {
         position: static;
         border-right: none;
         border-bottom: 1px solid #e5e7eb;
-        padding: 24px 16px;
+        padding: 24px 0;
         display: grid;
         grid-template-columns: 1fr 1fr;
         gap: 12px;
         max-height: none;
-        overflow-y: visible;
+        overflow: visible; /* Changed to visible to prevent clipping shadows/borders */
+        width: 100%;
     }
 
     .pp-sidebar-label {
@@ -5096,14 +5098,16 @@ footer {
 
     .pp-cat-tab {
         width: 100%;
-        padding: 12px 12px;
-        font-size: 13px;
+        padding: 12px 8px;
+        font-size: 12px; /* Slightly smaller for mobile */
         margin-bottom: 0;
         border: 1px solid #e5e7eb;
         justify-content: center;
         text-align: center;
         flex-direction: column;
         gap: 6px;
+        word-break: break-word; /* Allow long words to break if needed */
+        min-width: 0; /* Allow shrinking */
     }
 
     .pp-cat-tab-dot {
@@ -5138,9 +5142,10 @@ footer {
     }
 
     .pp-hero {
-        height: 260px;
-        align-items: center;
+        height: 260px; /* Slightly taller for better spacing */
+        align-items: flex-end; /* Move content to bottom */
         justify-content: center;
+        padding-bottom: 32px; /* Push it up slightly from the absolute bottom */
     }
 
     .pp-panel-head {
@@ -5152,8 +5157,8 @@ footer {
     }
 
     .pp-grid {
-        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
-        gap: 14px;
+        grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
+        gap: 12px;
     }
 
     .pp-back-btn {
@@ -5553,13 +5558,21 @@ footer {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    animation: ps-search-slide-up 0.8s cubic-bezier(0.22, 1, 0.36, 1) both;
 }
 
 .pp-sidebar-search {
-    padding: 0 12px 24px 0;
+    padding: 0 0 24px 0; /* Changed to 0 since parent now has padding */
     margin-bottom: 8px;
     border-bottom: 1px solid #e5e7eb;
+}
+
+@media (max-width: 900px) {
+    .pp-sidebar-search {
+        grid-column: 1 / -1;
+        padding: 0 0 16px 0;
+        width: 100%;
+        box-sizing: border-box;
+    }
 }
 
 .ps-search-bar {
@@ -5575,6 +5588,7 @@ footer {
     gap: 8px;
     transition: all 0.3s cubic-bezier(0.22, 1, 0.36, 1);
     position: relative;
+    margin-right: 4px; /* Tiny margin to prevent edge clipping on desktop */
 }
 
 .ps-search-bar:hover {
@@ -5589,8 +5603,8 @@ footer {
 
 .ps-search-input {
     flex: 1;
-    border: none;
-    outline: none;
+    border: none !important; /* Explicitly remove any inner border */
+    outline: none !important; /* Explicitly remove any focus outline */
     background: transparent;
     font-size: 13px;
     color: #1f2937;
@@ -5598,7 +5612,7 @@ footer {
     font-weight: 500;
     letter-spacing: 0.01em;
     padding: 2px 0;
-    box-shadow: none;
+    box-shadow: none !important; /* Remove any internal shadow */
 }
 
 .ps-search-input::placeholder {
