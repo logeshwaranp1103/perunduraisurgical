@@ -5358,15 +5358,9 @@ footer {
     padding: 0;
 }
 
-.lp-logo-enterprise {
-    /* Larger visual presence via scale to keep grid alignment */
-}
-
 .lp-logo-enterprise .lp-card-logo {
     transform: scale(1.15);
 }
-
-
 
 .lp-card-logo {
     max-width: 100%;
