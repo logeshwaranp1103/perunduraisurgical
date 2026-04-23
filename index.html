@@ -10,6 +10,20 @@
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700;800;900&display=swap" rel="stylesheet" />
     <link href="https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&display=swap" rel="stylesheet" />
     
+    <!-- Redirection Script for GitHub Pages SPA -->
+    <script type="text/javascript">
+      (function(l) {
+        if (l.search[1] === 'p') {
+          var q = l.search.slice(1).split('&').map(function(s) {
+            return s.replace(/~and~/g, '&');
+          }).join('?');
+          window.history.replaceState(null, null,
+            l.pathname.slice(0, -1) + q.slice(2) + l.hash
+          );
+        }
+      }(window.location))
+    </script>
+    
     <!-- Tailwind CDN for Thiyash Enterprise Integration (scoped/preflight-safe) -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
     <script>
@@ -101,7 +115,7 @@
             -webkit-backdrop-filter: blur(20px);
         }
     </style>
-    <script type="module" crossorigin src="/perunduraisurgical/assets/index-B9e8EsSS.js"></script>
+    <script type="module" crossorigin src="/perunduraisurgical/assets/index-D5uBSblG.js"></script>
     <link rel="stylesheet" crossorigin href="/perunduraisurgical/assets/index-B8cRRrus.css">
   </head>
   <body>
