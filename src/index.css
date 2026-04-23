@@ -5511,6 +5511,9 @@ footer {
         box-sizing: border-box;
     }
 
+    .lp-logo-enterprise {
+        /* Matching mobile height for alignment */
+    }
 
     .lp-logo-enterprise .lp-card-logo {
         transform: none; /* Removed scale to prevent border overflow on mobile */
