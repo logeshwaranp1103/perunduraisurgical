@@ -1589,8 +1589,11 @@ nav.scrolled {
 }
 
 .proprietor-name {
-    font-weight: 700;
+    font-weight: bolder;
+    font-size: 15px;
     color: var(--navy);
+    letter-spacing: 0.39px;
+    font-family: 'Playfair Display', serif;
 }
 
 /* ── PRODUCTS ── */
@@ -5161,5 +5164,336 @@ footer {
     .pp-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: 12px;
+    }
+}
+
+/* ═══════════════════════════════════════════════════
+   LANDING PAGE — Business Selection
+   ═══════════════════════════════════════════════════ */
+
+.lp-root {
+    min-height: 100dvh;
+    background: #f7f8fa;
+    background-image:
+        radial-gradient(circle at 15% 20%, rgba(26, 95, 168, 0.06) 0%, transparent 50%),
+        radial-gradient(circle at 85% 80%, rgba(220, 38, 38, 0.04) 0%, transparent 50%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    overflow: hidden;
+    font-family: 'Inter', 'Outfit', sans-serif;
+}
+
+/* Subtle dot-grid background */
+.lp-bg-pattern {
+    position: absolute;
+    inset: 0;
+    background-image: radial-gradient(circle, #c8c8d0 1px, transparent 1px);
+    background-size: 28px 28px;
+    opacity: 0.35;
+    pointer-events: none;
+}
+
+.lp-main {
+    position: relative;
+    z-index: 1;
+    width: 100%;
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 48px 24px 36px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+}
+
+/* ── Header ── */
+.lp-header {
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+    animation: lp-fade-in 0.7s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+
+.lp-eyebrow {
+    display: inline-block;
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #1A5FA8;
+    background: rgba(26, 95, 168, 0.08);
+    border: 1px solid rgba(26, 95, 168, 0.18);
+    padding: 5px 14px;
+    border-radius: 50px;
+}
+
+.lp-heading {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(28px, 5vw, 42px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.15;
+    letter-spacing: -0.02em;
+    margin: 0;
+}
+
+.lp-subheading {
+    font-size: 15px;
+    color: #64748b;
+    margin: 0;
+    max-width: 380px;
+    line-height: 1.6;
+}
+
+/* ── Cards Grid ── */
+.lp-cards {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    width: 100%;
+    animation: lp-fade-in 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.15s both;
+}
+
+/* ── Individual Card ── */
+.lp-card {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+    padding: 36px 28px 32px;
+    background: #ffffff;
+    border: 1px solid rgba(0, 0, 0, 0.07);
+    border-radius: 20px;
+    cursor: pointer;
+    text-align: center;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+    transition:
+        transform 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        box-shadow 0.35s cubic-bezier(0.22, 1, 0.36, 1),
+        border-color 0.35s ease;
+    outline: none;
+    overflow: hidden;
+}
+
+/* Accent stripe at top */
+.lp-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 3px;
+    background: var(--accent, #1A5FA8);
+    border-radius: 20px 20px 0 0;
+    opacity: 0;
+    transform: scaleX(0.6);
+    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@media (hover: hover) {
+    .lp-card:hover {
+        transform: translateY(-6px) scale(1.012);
+        box-shadow:
+            0 16px 40px rgba(0, 0, 0, 0.1),
+            0 4px 12px rgba(0, 0, 0, 0.06);
+        border-color: rgba(0, 0, 0, 0.12);
+    }
+
+    .lp-card:hover::before {
+        opacity: 1;
+        transform: scaleX(1);
+    }
+
+    .lp-card:hover .lp-card-arrow {
+        transform: translateX(4px);
+        color: var(--accent, #1A5FA8);
+    }
+}
+
+.lp-card:focus-visible {
+    box-shadow: 0 0 0 3px var(--accent, #1A5FA8), 0 8px 24px rgba(0, 0, 0, 0.1);
+}
+
+.lp-card:active {
+    transform: translateY(-2px) scale(1.005);
+}
+
+/* ── Tag badge ── */
+.lp-card-tag {
+    position: absolute;
+    top: 16px;
+    right: 16px;
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--accent, #1A5FA8);
+    background: color-mix(in srgb, var(--accent, #1A5FA8) 10%, transparent);
+    padding: 3px 10px;
+    border-radius: 50px;
+    border: 1px solid color-mix(in srgb, var(--accent, #1A5FA8) 20%, transparent);
+}
+
+/* ── Logo wrapper ── */
+.lp-card-logo-wrap {
+    width: 200px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: transparent;
+    padding: 8px;
+}
+
+.lp-logo-enterprise {
+    width: 240px;
+    height: 110px;
+}
+
+
+
+.lp-card-logo {
+    max-width: 100%;
+    max-height: 100%;
+    object-fit: contain;
+    display: block;
+    user-select: none;
+    image-rendering: -webkit-optimize-contrast;
+    image-rendering: crisp-edges;
+}
+
+/* ── Card text ── */
+.lp-card-info {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.lp-card-title {
+    font-family: 'Outfit', sans-serif;
+    font-size: clamp(16px, 2.2vw, 19px);
+    font-weight: 700;
+    color: #0f172a;
+    line-height: 1.25;
+    margin: 0;
+}
+
+.lp-card-subtitle {
+    font-size: 13px;
+    color: #64748b;
+    line-height: 1.5;
+    margin: 0;
+    max-width: 200px;
+}
+
+/* ── Arrow icon ── */
+.lp-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #94a3b8;
+    margin-top: 4px;
+    transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1), color 0.3s ease;
+}
+
+/* ── Footer note ── */
+.lp-footer-note {
+    font-size: 12px;
+    color: #94a3b8;
+    text-align: center;
+    animation: lp-fade-in 1s ease 0.4s both;
+}
+
+/* ── Keyframes ── */
+@keyframes lp-fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(16px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+/* ── Responsive ── */
+@media (max-width: 600px) {
+    .lp-main {
+        padding: 48px 20px 40px;
+        gap: 40px;
+    }
+
+    .lp-cards {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        perspective: 1000px;
+    }
+
+    .lp-card {
+        padding: 42px 24px 36px;
+        flex-direction: column;
+        text-align: center;
+        gap: 24px;
+        align-items: center;
+        background: #ffffff;
+        border: 1px solid rgba(0, 0, 0, 0.08);
+        box-shadow: 
+            0 10px 25px -5px rgba(0, 0, 0, 0.05),
+            0 8px 10px -6px rgba(0, 0, 0, 0.02),
+            0 0 0 1px rgba(0, 0, 0, 0.03);
+    }
+
+    /* Staggered entrance animation for cards */
+    .lp-card:nth-child(1) { animation: lp-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.2s both; }
+    .lp-card:nth-child(2) { animation: lp-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
+
+    @keyframes lp-card-enter {
+        from { opacity: 0; transform: translateY(30px) rotateX(-10deg); }
+        to { opacity: 1; transform: translateY(0) rotateX(0); }
+    }
+
+    .lp-card-logo-wrap {
+        width: 180px;
+        height: 90px;
+        background: white;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+        border: 1px solid rgba(0, 0, 0, 0.05);
+        padding: 10px;
+        border-radius: 16px;
+    }
+
+    .lp-card-title {
+        font-size: 21px;
+    }
+
+    .lp-card-subtitle {
+        font-size: 14px;
+        max-width: 240px;
+        margin: 0 auto;
+    }
+
+    .lp-card-tag {
+        display: block;
+        top: 12px;
+        right: 12px;
+        font-size: 9px;
+    }
+
+    .lp-card-arrow {
+        margin-top: 12px;
+        background: color-mix(in srgb, var(--accent) 8%, transparent);
+        padding: 8px 24px;
+        border-radius: 50px;
+        color: var(--accent);
+    }
+
+    .lp-card-arrow svg {
+        width: 24px;
+        height: 24px;
     }
 }
