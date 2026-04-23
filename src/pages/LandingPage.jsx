@@ -20,7 +20,7 @@ const businesses = [
     subtitle: 'Manufacturer of Housekeeping Products',
     path: '/enterprise',
     accent: '#dc2626',
-    tag: 'Manufacturing',
+    tag: 'Housekeeping',
   },
 ];
 

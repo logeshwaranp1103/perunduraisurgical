@@ -5291,8 +5291,9 @@ footer {
     background: var(--accent, #1A5FA8);
     border-radius: 20px 20px 0 0;
     opacity: 0;
-    transform: scaleX(0.6);
-    transition: opacity 0.35s ease, transform 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+    transform: scaleX(0);
+    transform-origin: center;
+    transition: opacity 0.35s ease, transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
 }
 
 @media (hover: hover) {
@@ -5310,7 +5311,7 @@ footer {
     }
 
     .lp-card:hover .lp-card-arrow {
-        transform: translateX(4px);
+        animation: lp-arrow-sway 1s ease-in-out infinite;
         color: var(--accent, #1A5FA8);
     }
 }
@@ -5421,8 +5422,33 @@ footer {
     }
 }
 
+@keyframes lp-arrow-sway {
+    0%, 100% { transform: translateX(0); }
+    50% { transform: translateX(6px); }
+}
+
+@keyframes lp-glow-pulse {
+    0%, 100% { 
+        opacity: 0.8; 
+        filter: brightness(1);
+    }
+    50% { 
+        opacity: 1; 
+        filter: brightness(1.4);
+    }
+}
+
 /* ── Responsive ── */
 @media (max-width: 600px) {
+    .lp-root {
+        background: #ffffff;
+        background-image: none;
+    }
+
+    .lp-bg-pattern {
+        display: none;
+    }
+
     .lp-main {
         padding: 48px 20px 40px;
         gap: 40px;
@@ -5431,7 +5457,6 @@ footer {
     .lp-cards {
         grid-template-columns: 1fr;
         gap: 20px;
-        perspective: 1000px;
     }
 
     .lp-card {
@@ -5442,10 +5467,18 @@ footer {
         align-items: center;
         background: #ffffff;
         border: 1px solid rgba(0, 0, 0, 0.08);
-        box-shadow: 
-            0 10px 25px -5px rgba(0, 0, 0, 0.05),
-            0 8px 10px -6px rgba(0, 0, 0, 0.02),
-            0 0 0 1px rgba(0, 0, 0, 0.03);
+        box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.08);
+    }
+
+    .lp-card::before {
+        opacity: 1;
+        transform: scaleX(1);
+        animation: lp-glow-pulse 2s ease-in-out infinite;
+    }
+
+    .lp-card-arrow {
+        animation: lp-arrow-sway 1s ease-in-out infinite;
+        color: var(--accent);
     }
 
     /* Staggered entrance animation for cards */
@@ -5453,16 +5486,15 @@ footer {
     .lp-card:nth-child(2) { animation: lp-card-enter 0.8s cubic-bezier(0.22, 1, 0.36, 1) 0.35s both; }
 
     @keyframes lp-card-enter {
-        from { opacity: 0; transform: translateY(30px) rotateX(-10deg); }
-        to { opacity: 1; transform: translateY(0) rotateX(0); }
+        from { opacity: 0; transform: translateY(20px); }
+        to { opacity: 1; transform: translateY(0); }
     }
 
     .lp-card-logo-wrap {
         width: 180px;
         height: 90px;
         background: white;
-        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
-        border: 1px solid rgba(0, 0, 0, 0.05);
+        border: 1px solid rgba(0, 0, 0, 0.1);
         padding: 10px;
         border-radius: 16px;
     }
