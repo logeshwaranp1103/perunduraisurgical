@@ -4263,15 +4263,22 @@ footer {
 }
 
 .ent-logo-wrap {
-    max-width: 240px;
+    max-width: 280px;
     margin: 0 auto;
 }
 
 @media (min-width: 640px) {
     .ent-logo-wrap {
-        max-width: 280px;
+        max-width: 360px;
         margin: 0;
     }
+}
+
+.ent-logo-img {
+    width: 100%;
+    height: auto;
+    display: block;
+    object-fit: contain;
 }
 
 .ent-tagline {
@@ -5342,18 +5349,21 @@ footer {
 
 /* ── Logo wrapper ── */
 .lp-card-logo-wrap {
-    width: 200px;
-    height: 100px;
+    width: 280px;
+    height: 130px;
     display: flex;
     align-items: center;
     justify-content: center;
     background: transparent;
-    padding: 8px;
+    padding: 0;
 }
 
 .lp-logo-enterprise {
-    width: 240px;
-    height: 110px;
+    /* Larger visual presence via scale to keep grid alignment */
+}
+
+.lp-logo-enterprise .lp-card-logo {
+    transform: scale(1.15);
 }
 
 
@@ -5491,12 +5501,22 @@ footer {
     }
 
     .lp-card-logo-wrap {
-        width: 180px;
-        height: 90px;
+        width: 100%;
+        max-width: 260px;
+        height: 120px;
         background: white;
-        border: 1px solid rgba(0, 0, 0, 0.1);
-        padding: 10px;
-        border-radius: 16px;
+        border: 1px solid rgba(0, 0, 0, 0.15);
+        padding: 14px;
+        border-radius: 18px;
+        box-sizing: border-box;
+    }
+
+    .lp-logo-enterprise {
+        /* Matching mobile height for alignment */
+    }
+
+    .lp-logo-enterprise .lp-card-logo {
+        transform: none; /* Removed scale to prevent border overflow on mobile */
     }
 
     .lp-card-title {
