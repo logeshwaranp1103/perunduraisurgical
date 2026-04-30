@@ -267,29 +267,8 @@
         -webkit-mask-image: none;
     }
 
-    @keyframes dotMotion {
-
-        0%,
-        100% {
-            background-position: 0 0;
-        }
-
-        50% {
-            background-position: 0 10px;
-        }
-    }
-
-    @keyframes breathingOpacity {
-
-        0%,
-        100% {
-            opacity: 0.45;
-        }
-
-        50% {
-            opacity: 0.75;
-        }
-    }
+}
+.surgicals-theme {
 
     .hero-wave {
         position: absolute;
@@ -2044,3 +2023,12 @@
 
     /* ── REVEAL & ANIMATIONS ── */
 }
+/* -- ANIMATIONS -- */
+@keyframes dotMotion { 0%, 100% { background-position: 0 0; } 50% { background-position: 0 10px; } }
+@keyframes breathingOpacity { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.75; } }
+@keyframes kenBurns { 0% { transform: scale(1.15); } 100% { transform: scale(1.0); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
