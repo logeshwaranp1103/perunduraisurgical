@@ -9,6 +9,7 @@ import About from '../components/About';
 import Products from '../components/Products';
 import WhyUs from '../components/WhyUs';
 import Brands from '../components/Brands';
+import AuthorizedDealers from '../components/AuthorizedDealers';
 import Licenses from '../components/Licenses';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
@@ -47,6 +48,7 @@ export default function HomePage() {
       <Products />
       <WhyUs />
       <Brands />
+      <AuthorizedDealers />
       <Licenses />
       <Services />
       <Testimonials />
