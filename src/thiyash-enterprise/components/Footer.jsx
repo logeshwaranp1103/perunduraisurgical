@@ -66,6 +66,7 @@ const Footer = () => {
                 <li><Link to="/#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</Link></li>
                 <li><Link to="/#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</Link></li>
                 <li><Link to="/#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</Link></li>
+                <li><Link to="/#clients" onClick={(e) => handleLinkClick(e, 'clients')}>Clients</Link></li>
                 <li><Link to="/#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</Link></li>
               </ul>
             </Reveal>

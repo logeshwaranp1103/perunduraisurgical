@@ -25,7 +25,7 @@ const StatsBar = () => {
   const handleReveal = () => {
     if (!hasStarted) {
       setHasStarted(true);
-      const targets = { products: 1000, brands: 20, years: 10, clients: 300 };
+      const targets = { products: 1000, brands: 30, years: 10, clients: 500 };
       Object.keys(targets).forEach((key) => {
         let current = 0;
         const target = targets[key];

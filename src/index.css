@@ -5635,3 +5635,5 @@ footer {
         height: 8px;
     }
 }
+.s-sub { white-space: normal !important; }
+

@@ -18,6 +18,7 @@ import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
 import FAQ from '../components/FAQ';
+import Clients from '../components/Clients';
 import Footer from '../components/Footer';
 
 export default function ThiyashPage() {
@@ -50,6 +51,7 @@ export default function ThiyashPage() {
       <Testimonials />
       <Contact />
       <FAQ />
+      <Clients />
       <Footer />
     </div>
   );

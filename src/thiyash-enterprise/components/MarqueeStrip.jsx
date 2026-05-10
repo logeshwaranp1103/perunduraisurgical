@@ -1,7 +1,8 @@
 const MarqueeStrip = () => {
   const baseItems = [
-    "Surgical Instruments", "IV & Infusion Sets", "Wound Care", "PPE & Protection",
-    "Pharmaceuticals", "Diagnostics", "Hospital Consumables", "Cold Chain Products"
+    "Cleaning Chemicals", "Floor Cleaners", "Mops & Brushes", "Waste Bins",
+    "Hand Wash & Sanitizers", "Paper Napkins", "Garbage Bags", "Cleaning Tools",
+    "Air Fresheners", "Nitrile Gloves", "Microfiber Cloths", "Toilet Cleaners"
   ];
   const items = [...baseItems, ...baseItems];
 

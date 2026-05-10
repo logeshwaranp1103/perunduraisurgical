@@ -51,13 +51,18 @@ const Navbar = () => {
         return;
       }
 
-      const sectionIds = ['about', 'products', 'services', 'contact'];
+      const sectionIds = ['about', 'products', 'services', 'contact', 'clients'];
       let current = 'contact';
 
       sectionIds.forEach((id) => {
         const sec = document.getElementById(id);
         if (sec && scrollPos >= sec.offsetTop) current = id;
       });
+
+      // Special case: if we're near the very bottom, force 'clients'
+      if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 80) {
+        if (document.getElementById('clients')) current = 'clients';
+      }
 
       setActiveSection(current);
       setScrolled(window.scrollY > 40);
@@ -85,6 +90,7 @@ const Navbar = () => {
         <li><Link to={`${basePath}#about`} className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</Link></li>
         <li><Link to={`${basePath}#products`} className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</Link></li>
         <li><Link to={`${basePath}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
+        <li><Link to={`${basePath}#clients`} className={activeSection === 'clients' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'clients')}>Clients</Link></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">

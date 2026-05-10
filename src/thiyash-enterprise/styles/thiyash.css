@@ -370,9 +370,12 @@ nav.scrolled {
     }
     .hamburger {
         display: flex;
+        z-index: 1001;
     }
     .nav-right {
-        display: none;
+        display: flex;
+        align-items: center;
+        gap: 6px;
     }
 }
 
@@ -1091,12 +1094,11 @@ nav.scrolled {
     .section { padding: 60px 5% 0px; margin-bottom: 0; }
     #products.section { padding-top: 20px; }
     #about.section { padding-top: 10px; }
-    .section.alt { background: var(--bg); }
+    .section.alt { background: var(--bg-alt); }
     .s-tag { display: inline-block; font-size: 11.5px; font-weight: 700; color: var(--blue); letter-spacing: 1.8px; text-transform: uppercase; margin-bottom: 10px; }
     .s-title { font-family: 'Instrument Serif', serif; font-size: clamp(1.7rem, 2.8vw, 2.4rem); color: var(--text); line-height: 1.25; font-weight: 400; margin-bottom: 10px; letter-spacing: 1px; }
     .s-title em { font-style: italic; color: var(--blue); }
-    .s-sub { font-size: 14px; color: var(--text-soft); line-height: 1.75; text-align: center; white-space: nowrap; margin: 0 auto; }
-    @media (max-width: 600px) { .s-sub { white-space: normal; max-width: 520px; width: 100%; } }
+    .s-sub { font-size: 14px; color: var(--text-soft); line-height: 1.75; text-align: justify; max-width: 520px; margin: 0 auto; }
     .s-head { margin-bottom: 48px; }
     .s-head.center { text-align: center; }
     .s-head.center .s-sub { margin: 0 auto; }
@@ -1124,27 +1126,7 @@ nav.scrolled {
         .sc-short { height: 140px; flex: 1; }
     }
 
-    .about-grid { display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 80px; align-items: flex-start; }
-    .about-visual { position: relative; }
-    .about-img { position: relative; top: -50px; z-index: 2; border-radius: var(--radius-lg); overflow: visible; box-shadow: none !important; }
-    .about-chip { position: absolute; bottom: -20px; right: -20px; background: var(--navy); padding: 22px 30px; border-radius: 16px; z-index: 10; display: flex; flex-direction: column; align-items: center; justify-content: center; box-shadow: none !important; text-align: center; }
-    .about-chip strong { color: var(--amber); font-size: 32px; font-weight: 700; line-height: 1; margin-bottom: 6px; display: block; }
-    .about-chip span { color: #fff; font-size: 11px; font-weight: 600; letter-spacing: 0.15em; text-transform: uppercase; }
-    @media(max-width: 768px) {
-        .about-chip { bottom: -16px; right: -8px; padding: 16px 22px; }
-        .about-chip strong { font-size: 24px; }
-        .about-chip span { font-size: 9px; }
-    }
-    @media(min-width: 1101px) { .about-img { margin-top: 50px; } }
-    .about-facts { list-style: none; margin-top: 40px; display: grid; gap: 24px; }
-    .about-fact { display: flex; align-items: center; gap: 16px; padding: 16px; background: var(--white); border-radius: var(--radius); box-shadow: none !important; transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); border: 1px solid rgba(0, 0, 0, 0.05); }
-    .about-fact:hover { transform: translateX(10px); border-color: var(--blue); }
-    .fact-icon { width: 44px; height: 44px; background: #F1F5F9; border-radius: 10px; display: flex; align-items: center; justify-content: center; flex-shrink: 0; color: var(--text-mid); transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1); }
-    .fact-icon svg { height: 16px; fill: none; stroke: currentColor; stroke-width: 2; }
-    .fact-text strong { display: block; font-size: 12px; font-weight: 600; color: var(--text-soft); letter-spacing: 0.5px; margin-bottom: 2px; }
-    .fact-text p { font-size: 13.5px; color: var(--text); line-height: 1.5; }
-    .fact-value { font-weight: 700; color: var(--navy); }
-    .proprietor-name { font-weight: bolder; font-size: 15px; color: var(--navy); letter-spacing: 0.39px; font-family: 'Playfair Display', serif; }
+
 
     .products-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
     .prod-card { border: 1px solid var(--border); border-radius: var(--radius-lg); overflow: hidden; background: var(--white); transition: all 0.4s cubic-bezier(0.22, 1, 0.36, 1); }
@@ -1356,17 +1338,22 @@ nav.scrolled {
         }
 
         .logo-img {
-            height: 60px !important;
+            height: 48px !important;
+            width: auto;
+            object-fit: contain;
         }
 
         .nav-cta,
         .nav-contact-btn {
-            height: 32px !important;
-            padding: 0 10px !important;
-            font-size: 11px !important;
+            height: 28px !important;
+            padding: 0 8px !important;
+            font-size: 10px !important;
             display: flex !important;
             align-items: center !important;
             justify-content: center !important;
+            border-radius: 6px !important;
+            letter-spacing: 0;
+            white-space: nowrap;
         }
 
         .section {
@@ -1476,6 +1463,8 @@ nav.scrolled {
         .about-img {
             top: 0;
             margin-bottom: 20px;
+            min-height: 400px;
+            background: #f1f5f9;
         }
 
         .about-chip {
@@ -1483,6 +1472,9 @@ nav.scrolled {
             right: 0;
             padding: 12px 18px;
         }
+
+        .thiyash-theme .mobile-about-title { display: block !important; }
+        .thiyash-theme .desktop-about-title { display: none !important; }
 
         .about-chip strong {
             font-size: 24px;
@@ -1579,8 +1571,48 @@ nav.scrolled {
 
         /* Thiyash Why Us */
         .th-why-grid {
-            grid-template-columns: 1fr;
-            gap: 16px;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 12px;
+        }
+
+        .th-why-card {
+            padding: 16px 12px;
+            text-align: left;
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            gap: 12px;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 12px;
+        }
+
+        .th-why-card p {
+            display: none;
+        }
+
+        .th-why-icon-box {
+            width: 32px;
+            height: 32px;
+            margin-bottom: 0;
+            background: rgba(var(--th-red-rgb), 0.1);
+            border-radius: 8px;
+            flex-shrink: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .th-why-icon-box svg {
+            width: 16px;
+            height: 16px;
+        }
+
+        .th-why-card h3 {
+            font-size: 11px;
+            line-height: 1.3;
+            margin: 0;
+            color: #fff;
+            font-weight: 600;
         }
 
         .th-why-header {
@@ -1876,3 +1908,112 @@ nav.scrolled {
 @keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
 @keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
+
+/* ── ABOUT SECTION SYNC ── */
+.thiyash-theme .about-grid { 
+    display: grid !important; 
+    grid-template-columns: 1.1fr 0.9fr !important; 
+    gap: 80px !important; 
+    align-items: flex-start !important; 
+    position: relative !important; 
+}
+
+.thiyash-theme .about-visual { 
+    position: relative !important; 
+}
+
+.thiyash-theme .about-img { 
+    position: relative !important; 
+    top: -50px !important; 
+    z-index: 2 !important; 
+    border-radius: var(--radius-lg) !important; 
+    overflow: visible !important; 
+    box-shadow: none !important; 
+    background: var(--bg-alt) !important; 
+}
+
+.thiyash-theme .desktop-about-title { 
+    display: block !important; 
+    visibility: visible !important; 
+}
+
+.thiyash-theme .mobile-about-title { 
+    display: none !important; 
+    visibility: hidden !important; 
+}
+
+.thiyash-theme .about-chip { 
+    position: absolute !important; 
+    bottom: -20px !important; 
+    right: -20px !important; 
+    background: var(--navy) !important; 
+    padding: 22px 30px !important; 
+    border-radius: 16px !important; 
+    z-index: 10 !important; 
+    display: flex !important; 
+    flex-direction: column !important; 
+    align-items: center !important; 
+    justify-content: center !important; 
+    text-align: center !important; 
+}
+
+.thiyash-theme .about-chip strong { 
+    color: var(--amber) !important; 
+    font-size: 32px !important; 
+    font-weight: 700 !important; 
+    line-height: 1 !important; 
+    margin-bottom: 6px !important; 
+    display: block !important; 
+}
+
+.thiyash-theme .about-chip span { 
+    color: #fff !important; 
+    font-size: 11px !important; 
+    font-weight: 600 !important; 
+    letter-spacing: 0.15em !important; 
+    text-transform: uppercase !important; 
+}
+
+.thiyash-theme .about-facts { 
+    list-style: none !important; 
+    margin-top: 40px !important; 
+    display: grid !important; 
+    gap: 24px !important; 
+}
+
+.thiyash-theme .about-fact { 
+    display: flex !important; 
+    align-items: center !important; 
+    gap: 16px !important; 
+    padding: 16px !important; 
+    background: var(--white) !important; 
+    border-radius: var(--radius) !important; 
+    box-shadow: none !important; 
+    transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1) !important; 
+    border: 1px solid rgba(0, 0, 0, 0.05) !important; 
+}
+
+@media(max-width: 1100px) {
+    .thiyash-theme .about-grid {
+        grid-template-columns: 1fr !important;
+        gap: 32px !important;
+    }
+    .thiyash-theme .about-img {
+        top: 0 !important;
+        margin-bottom: 20px !important;
+        min-height: 400px !important;
+    }
+    .thiyash-theme .about-chip { 
+        bottom: 10px !important; 
+        right: 0 !important; 
+        padding: 12px 18px !important; 
+    }
+    .thiyash-theme .mobile-about-title { 
+        display: block !important; 
+        visibility: visible !important; 
+    }
+    .thiyash-theme .desktop-about-title { 
+        display: none !important; 
+        visibility: hidden !important; 
+    }
+}
