@@ -31,8 +31,12 @@ const Footer = () => {
         <footer>
           <div className="footer-grid">
             <Reveal className="fg-about" animation="reveal-left">
-              <Link to="/#home-strip" className="logo" style={{ display: 'inline-block' }} onClick={(e) => handleLinkClick(e, 'home-strip')}>
-                <img src={`${import.meta.env.BASE_URL}thiyash/thiyash-logo.png`} alt="Thiyash Enterprise" className="logo-img" style={{ objectFit: 'contain' }} /> 
+              <Link to="/#home-strip" className="logo" style={{ display: 'flex', alignItems: 'center', gap: '11px', textDecoration: 'none' }} onClick={(e) => handleLinkClick(e, 'home-strip')}>
+                <img src={`${import.meta.env.BASE_URL}thiyash/thiyash-logo.png`} alt="Thiyash Enterprise" className="logo-img" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} /> 
+                <div className="logo-words">
+                  <div className="l1" style={{ color: '#E8191A', fontSize: '18px', fontWeight: '600', lineHeight: '1.1' }}>Thiyash Enterprise</div>
+                  <div className="l2" style={{ color: '#C97A15', fontSize: '12px', fontWeight: '500', lineHeight: '1.1' }}>Quality Housekeeping Supplies</div>
+                </div>
               </Link>
               <p>Your trusted wholesale partner for premium housekeeping and cleaning products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2009.</p>
               <div className="hero-btns">

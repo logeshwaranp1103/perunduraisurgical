@@ -84,6 +84,10 @@ const Navbar = () => {
     <nav id="topnav" className={scrolled ? 'scrolled' : ''}>
       <Link to={`${basePath}#home-strip`} className="logo" onClick={(e) => handleNavClick(e, 'home-strip')}>
         <img src={assetUrl('thiyash/thiyash-logo.png')} alt="Thiyash Enterprise" className="logo-img" />
+        <div className="logo-words">
+          <div className="l1" style={{ color: '#E8191A' }}>Thiyash Enterprise</div>
+          <div className="l2" style={{ color: '#C97A15' }}>Quality Housekeeping Supplies</div>
+        </div>
       </Link>
       <ul className={`nav-links ${isOpen ? 'open' : ''}`} id="navLinks">
         <li><Link to={`${basePath}#home-strip`} className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</Link></li>
