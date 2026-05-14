@@ -45,10 +45,10 @@ export const productsByCat = {
     { name: 'Paper Napkins', desc: 'White beverage and dinner napkins', img: assetUrl('thiyash/hygiene-sanitization/paper-napkin.webp') },
     { name: 'Hand Paper Towels', desc: 'Premium 2-ply multifold towels', img: 'https://images.unsplash.com/photo-1583947581924-860bda6a26df?w=400' },
     { name: 'Toilet Tissue Rolls', desc: 'Bulk pack 2-ply soft toilet rolls', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400' },
-    { name: 'T-Roll Dispenser', desc: 'Lockable wall-mounted dispenser', img: 'public/thiyash/hygiene-sanitization/t-roll-dispenser.jpg' },
+    { name: 'T-Roll Dispenser', desc: 'Lockable wall-mounted dispenser', img: assetUrl('thiyash/hygiene-sanitization/t-roll-dispenser.jpg') },
     { name: 'Rubber Gloves', desc: 'Nitrile Examination Gloves', img: assetUrl('perundurai/PPE/Nitrile Examination Gloves.jpg') },
-    { name: 'Work Aprons', desc: 'Waterproof PVC heavy duty apron', img: 'public/thiyash/hygiene-sanitization/apron.webp' },
-    { name: 'Facial Tissues', desc: 'Soft 3-ply premium facial tissues', img: 'public/thiyash/hygiene-sanitization/facial-tissues.jpg' },
+    { name: 'Work Aprons', desc: 'Waterproof PVC heavy duty apron', img: assetUrl('thiyash/hygiene-sanitization/apron.webp') },
+    { name: 'Facial Tissues', desc: 'Soft 3-ply premium facial tissues', img: assetUrl('thiyash/hygiene-sanitization/facial-tissues.jpg') },
     { name: 'Safety Masks', desc: '3-Ply Surgical Mask', img: assetUrl('perundurai/PPE/3-Ply Surgical Mask.jpg') }
   ],
   laundry: [
@@ -72,6 +72,6 @@ export const productsByCat = {
     { name: 'Vacuum Cleaner', desc: 'Industrial grade wet and dry vacuum', img: assetUrl('thiyash/cleaning-tools/vaccum cleaner.webp') },
     { name: 'Dustpan Set', desc: 'Long-handle dustpan and brush set', img: assetUrl('thiyash/cleaning-tools/dustpan.webp') },
     { name: 'Pedal Bin', desc: 'Hands-free plastic pedal dustbin', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400' },
-    { name: 'Garbage Bags', desc: 'Heavy duty black trash bags', img: 'public/thiyash/cleaning-tools/garbagebag.jpg' }
+    { name: 'Garbage Bags', desc: 'Heavy duty black trash bags', img: assetUrl('thiyash/cleaning-tools/garbagebag.jpg') }
   ]
 };

@@ -1,10 +1,15 @@
 export function assetUrl(path) {
+  if (!path) return '';
+  if (path.startsWith('http')) return path;
+  
+  // Remove leading slashes and 'public/' if present
+  const cleaned = path.replace(/^\/+/, '').replace(/^public\//, '');
+  
+  // Use Vite's BASE_URL (e.g. /perunduraisurgical/)
   const base = import.meta.env.BASE_URL || '/';
-  const cleaned = String(path || '').replace(/^\/+/, '');
-  const encoded = cleaned
-    .split('/')
-    .map((segment) => encodeURIComponent(segment))
-    .join('/');
-  return `${base}${encoded}`;
+  
+  // Ensure base ends with a slash and cleaned doesn't start with one
+  const safeBase = base.endsWith('/') ? base : `${base}/`;
+  
+  return `${safeBase}${cleaned}`;
 }
-
