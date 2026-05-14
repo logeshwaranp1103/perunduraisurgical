@@ -58,7 +58,7 @@ const Contact = () => {
               <div className="cf-icon"><svg viewBox="0 0 24 24"><path d="M20 21v-2a4 4 0 00-4-4H8a4 4 0 00-4 4v2" /><circle cx="12" cy="7" r="4" /></svg></div>
               <div>
                 <div className="cf-lbl">Proprietor</div>
-                <div className="cf-val">K. Ragavendran B.E.</div>
+                <div className="cf-val"><span>K. Ragavendran</span>B.E.</div>
               </div>
             </div>
             <Reveal className="cf" animation="reveal-up" threshold={0.1}>

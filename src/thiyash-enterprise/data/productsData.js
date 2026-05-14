@@ -5,81 +5,67 @@ export const categories = [
     id: 'chemicals',
     title: 'Cleaning Chemicals',
     sub: 'Floor, surface & washroom cleaners',
-    banner: 'https://images.unsplash.com/photo-1581578731522-aa7c0411d7f6?w=1200&q=80&auto=format&fit=crop',
+    banner: 'public/thiyash/banner/chemical_cover.jpg',
     description: 'Professional cleaning solutions for maintaining hygiene and spotless spaces.'
   },
   {
     id: 'hygiene',
     title: 'Hygiene-Sanitization',
     sub: 'Detergents, fabric care & stain removal',
-    banner: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1200&q=80&auto=format&fit=crop',
+    banner: 'public/thiyash/banner/sanitizer_cover.jpg',
     description: 'Advanced hygiene products designed to ensure germ-free environments.'
   },
   {
     id: 'laundry',
     title: 'Laundry Care',
     sub: 'Detergents, fabric care & stain removal',
-    banner: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1200&q=80&auto=format&fit=crop',
+    banner: 'public/thiyash/banner/cleaning_liquids_cover.jpeg',
     description: 'Complete laundry solutions for freshness, fabric protection, and deep cleaning.'
   },
   {
     id: 'tools',
     title: 'Cleaning Tools',
     sub: 'Mops, brushes & cleaning accessories',
-    banner: 'https://images.unsplash.com/photo-1528740561666-dc2479da08ad?w=1200&q=80&auto=format&fit=crop',
+    banner: 'public/thiyash/banner/cleaningtools_cover.jpg',
     description: 'Durable tools and equipment for efficient everyday cleaning operations.'
   },
-  {
-    id: 'paper',
-    title: 'Paper & Tissue',
-    sub: 'Tissues, wipes & disposable paper',
-    banner: 'https://images.unsplash.com/photo-1584622781564-1d9876a13d00?w=1200&q=80&auto=format&fit=crop',
-    description: 'High-quality disposable essentials for hygiene, hospitality, and commercial use.'
-  },
-  {
-    id: 'safety',
-    title: 'Safety & Utility',
-    sub: 'Protective gear & utility essentials',
-    banner: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=1200&q=80&auto=format&fit=crop',
-    description: 'Safety and utility products designed for secure and efficient workplaces.'
-  }
+
 ];
 
 export const productsByCat = {
   chemicals: [
-    { name: 'Floor Cleaner 5L', desc: 'Pine scented germicidal floor cleaner', img: 'https://images.unsplash.com/photo-1581578731522-aa7c0411d7f6?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Glass Cleaner 5L', desc: 'Streak-free window and glass formula', img: 'https://images.unsplash.com/photo-1585314062340-f1a5a7c9328d?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Toilet Bowl Cleaner', desc: 'Heavy duty limescale remover', img: 'https://images.unsplash.com/photo-1584622781564-24ffca6a15ea?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Hand Wash Liquid 5L', desc: 'Moisturizing antibacterial hand wash', img: 'https://images.unsplash.com/photo-1590611380053-1af523713f04?w=400&q=80&auto=format&fit=crop' }
+    { name: 'Floor Cleaner', desc: 'Pine scented germicidal floor cleaner', img: 'https://images.unsplash.com/photo-1585421514284-efb74c2b69ba?w=300' },
+    { name: 'Glass Cleaner', desc: 'Streak-free window and glass formula', img: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=300' },
+    { name: 'Toilet Bowl Cleaner', desc: 'Heavy duty limescale remover', img: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=300' }
   ],
   hygiene: [
-    { name: 'Cotton Wet Mop', desc: 'Heavy duty loop end cotton mop', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Microfiber Dry Mop', desc: 'Dust control microfiber floor mop', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Soft Broom', desc: 'Premium grass soft broom for indoors', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Hard Broom', desc: 'Nylon bristle outdoor broom', img: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=400&q=80&auto=format&fit=crop' }
+    { name: 'Hand Sanitizer', desc: '70% Alcohol based instant hand sanitizer', img: assetUrl('thiyash/hygiene-sanitization/sanitizer.jpg') },
+    { name: 'Surface Sanitizer', desc: 'Powerful disinfectant for all surfaces', img: assetUrl('thiyash/hygiene-sanitization/surface-sanitizer.jpg') },
+    { name: 'Disinfectant Spray', desc: 'Multi-surface germ protection spray', img: assetUrl('thiyash/hygiene-sanitization/disinfectant-spray.avif') },
+    { name: 'Room Spray', desc: 'Long-lasting refreshing room fragrance', img: assetUrl('thiyash/hygiene-sanitization/room-spray.jpeg') },
+    { name: 'Hand Paper Towels', desc: 'Premium 2-ply multifold towels', img: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=300' },
+    { name: 'Toilet Tissue Rolls', desc: 'Bulk pack 2-ply soft toilet rolls', img: 'https://images.unsplash.com/photo-1584556326561-8b4f8d2b7d54?w=300' },
+    { name: 'Paper Napkins', desc: 'White beverage and dinner napkins', img: assetUrl('thiyash/hygiene-sanitization/paper-napkin.webp') },
+    { name: 'T-Roll Dispenser', desc: 'Lockable wall-mounted dispenser', img: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=400&q=80&auto=format&fit=crop' },
+    { name: 'Rubber Gloves', desc: 'Heavy duty reusable cleaning gloves', img: 'https://images.unsplash.com/photo-1583947215259-38e31be8751f?w=300' },
+    { name: 'Work Aprons', desc: 'Waterproof PVC heavy duty apron', img: 'https://images.unsplash.com/photo-1607082348824-0a96f2a4b9da?w=300' }
   ],
   laundry: [
-    { name: 'Pedal Bin 60L', desc: 'Hands-free plastic pedal dustbin', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Garbage Bags Large', desc: '100 pieces heavy duty black trash bags', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Sharps Container', desc: 'Medical grade sharps disposal unit', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Recycling Station', desc: 'Color-coded waste separation unit', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' }
+    { name: 'Liquid Detergent', desc: 'High-performance laundry cleaning liquid', img: assetUrl('thiyash/laundry-care/Liquid Detergen.jpeg') },
+    { name: 'Fabric Softener', desc: 'Makes clothes soft and fragrant', img: assetUrl('thiyash/laundry-care/Fabric Softener.jpeg') },
+    { name: 'Linen Conditioner', desc: 'Premium care for hospitality linen', img: assetUrl('thiyash/laundry-care/Linen Conditioner.jpeg') },
+    { name: 'Stain Remover', desc: 'Tough on stains, gentle on fabric', img: assetUrl('thiyash/laundry-care/Stain Remover.jpeg') },
+    { name: 'Laundry Bags', desc: 'Durable nylon laundry collection bags', img: assetUrl('thiyash/laundry-care/Laundry Bags.jpeg') }
   ],
   tools: [
-    { name: 'Window Squeegee', desc: 'Professional streak-free window tool', img: 'https://images.unsplash.com/photo-1528740561666-dc2479da08ad?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Floor Scrubber', desc: 'Heavy duty deck scrubbing brush', img: 'https://images.unsplash.com/photo-1528740561666-dc2479da08ad?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Microfiber Cloths', desc: 'Pack of 10 color-coded cloths', img: 'https://images.unsplash.com/photo-1528740561666-dc2479da08ad?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Spray Bottles', desc: 'Industrial grade dilution bottles', img: 'https://images.unsplash.com/photo-1528740561666-dc2479da08ad?w=400&q=80&auto=format&fit=crop' }
+    { name: 'Cotton Wet Mop', desc: 'Heavy duty loop end industrial mop', img: assetUrl('thiyash/cleaning-tools/mop.jpg') },
+    { name: 'Floor Wiper', desc: 'Streak-free professional floor squeegee', img: assetUrl('thiyash/cleaning-tools/floor wiper.jpg') },
+    { name: 'Soft Broom', desc: 'High-quality grass broom for indoor cleaning', img: assetUrl('thiyash/cleaning-tools/broom.jpg') },
+    { name: 'Floor Scrubber', desc: 'Heavy duty scrubbing brush for tough stains', img: assetUrl('thiyash/cleaning-tools/sruber.jpg') },
+    { name: 'Cleaning Bucket', desc: '13L HDPE durable cleaning bucket', img: assetUrl('thiyash/cleaning-tools/plastic-13l-blue-hdpe-home-water-bucket-888.jpg') },
+    { name: 'Pedal Bin', desc: 'Hands-free plastic pedal dustbin', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' },
+    { name: 'Garbage Bags', desc: 'Heavy duty black trash bags', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400&q=80&auto=format&fit=crop' }
   ],
-  paper: [
-    { name: 'Hand Paper Towels', desc: 'Premium 2-ply multifold towels', img: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Toilet Tissue Rolls', desc: 'Bulk pack 2-ply soft toilet rolls', img: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Paper Napkins', desc: 'White beverage and dinner napkins', img: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=400&q=80&auto=format&fit=crop' },
-    { name: 'T-Roll Dispenser', desc: 'Lockable wall-mounted dispenser', img: 'https://images.unsplash.com/photo-1583907583921-17f4291800ce?w=400&q=80&auto=format&fit=crop' }
-  ],
-  safety: [
-    { name: 'Rubber Gloves', desc: 'Heavy duty reusable cleaning gloves', img: 'https://images.unsplash.com/photo-1584622781564-1d9876a13d00?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Safety Vest', desc: 'High-visibility reflective work vest', img: 'https://images.unsplash.com/photo-1584622781564-1d9876a13d00?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Face Shields', desc: 'Anti-splash protective face shield', img: 'https://images.unsplash.com/photo-1584622781564-1d9876a13d00?w=400&q=80&auto=format&fit=crop' },
-    { name: 'Work Aprons', desc: 'Waterproof PVC heavy duty apron', img: 'https://images.unsplash.com/photo-1584622781564-1d9876a13d00?w=400&q=80&auto=format&fit=crop' }
-  ]
+
+
 };

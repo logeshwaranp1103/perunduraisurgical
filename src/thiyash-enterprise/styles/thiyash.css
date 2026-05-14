@@ -460,30 +460,13 @@ nav.scrolled {
         box-shadow: none !important;
     }
 
-    /* INTERACTIVE HERO GLOW */
-    #hero {
-        position: relative;
-        overflow: hidden;
+    /* INTERACTIVE HERO GLOW (Consolidated with Component Styles) */
+    .hero-col-left {
+        transition: transform 0.3s ease-out;
     }
 
-    #hero::after {
-        content: "";
-        position: absolute;
-        top: var(--mouse-y, -999px);
-        left: var(--mouse-x, -999px);
-        width: 600px;
-        height: 600px;
-        background: radial-gradient(circle, rgba(232, 25, 26, 0.15) 0%, rgba(30, 42, 110, 0.08) 50%, transparent 100%);
-        transform: translate(-50%, -50%);
-        pointer-events: none;
-        z-index: 1;
-        filter: blur(80px);
-        transition: opacity 0.3s ease;
-        opacity: 0;
-    }
-
-    #hero:hover::after {
-        opacity: 1;
+    #hero:hover .hero-col-left {
+        transform: translateY(-5px);
     }
 
     .hero-col-left {
@@ -501,7 +484,7 @@ nav.scrolled {
         align-items: center;
         padding: 45px 5% 120px;
         padding-bottom: 90px;
-        background: linear-gradient(135deg, #071A3E 0%, #0C3470 40%, #1A5FA8 100%);
+        background: linear-gradient(135deg, #0F172A 0%, #1E1B4B 40%, #7F1D1D 100%);
         overflow: clip !important;
         --spot-radius: 190px;
     }
@@ -521,6 +504,26 @@ nav.scrolled {
         animation: dotMotion 8s ease-in-out infinite, breathingOpacity 8s ease-in-out infinite;
         mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
         -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), transparent 0%, black 100%);
+    }
+
+    #hero::after {
+        opacity: 0;
+        background-image: radial-gradient(#c97a15 1.8px, transparent 1.8px);
+        filter: none !important;
+        mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+        -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
+        transition: none;
+        transform: none;
+        animation: dotMotion 8s ease-in-out infinite;
+    }
+
+    #hero:hover::after {
+        opacity: 1;
+    }
+
+    #hero:not(:hover)::before {
+        mask-image: none;
+        -webkit-mask-image: none;
     }
 
 
@@ -2017,3 +2020,13 @@ nav.scrolled {
         visibility: hidden !important; 
     }
 }
+
+/* -- ANIMATIONS -- */
+@keyframes dotMotion { 0%, 100% { background-position: 0 0; } 50% { background-position: 0 10px; } }
+@keyframes breathingOpacity { 0%, 100% { opacity: 0.45; } 50% { opacity: 0.75; } }
+@keyframes kenBurns { 0% { transform: scale(1.15); } 100% { transform: scale(1.0); } }
+@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+@keyframes fadeInDown { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInUp { to { opacity: 1; transform: translateY(0); } }
+@keyframes fadeInRight { to { opacity: 1; transform: translateX(0); } }
+@keyframes fadeIn { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }

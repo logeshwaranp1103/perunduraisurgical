@@ -5,12 +5,12 @@ const ShowcaseBand = () => {
     <div className="showcase-band" style={{ paddingTop: '40px', paddingBottom: '60px', background: '#fff' }}>
       <div className="showcase-inner-4col">
         <Reveal className="sc-img" animation="reveal-left" style={{ height: '280px', position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
-          <img src="public/thiyash/cleaning-chemicals.webp"
+          <img src="public/thiyash/productstats/cleaning-chemicals.webp"
             alt="Cleaning Chemicals" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="sc-label">Cleaning Chemicals</div>
         </Reveal>
         <Reveal className="sc-img" animation="reveal-up" delay="0.1s" style={{ height: '280px', position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
-          <img src="public/thiyash/cleaning-tools.png"
+          <img src="public/thiyash/productstats/cleaning-tools.png"
             alt="Cleaning Tools" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="sc-label">Cleaning Tools</div>
         </Reveal>
@@ -20,7 +20,7 @@ const ShowcaseBand = () => {
           <div className="sc-label">Waste Management</div>
         </Reveal>
         <Reveal className="sc-img" animation="reveal-right" delay="0.3s" style={{ height: '280px', position: 'relative', overflow: 'hidden', borderRadius: '16px' }}>
-          <img src="public/thiyash/hygiene-products.jpeg"
+          <img src="public/thiyash/productstats/hygiene-products.jpeg"
             alt="Hygiene Products" loading="lazy" style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
           <div className="sc-label">Hygiene Products</div>
         </Reveal>
