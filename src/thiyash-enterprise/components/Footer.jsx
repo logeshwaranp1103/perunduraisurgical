@@ -31,7 +31,7 @@ const Footer = () => {
         <footer className="footer">
           <div className="footer-grid">
             <Reveal className="fg-about" animation="reveal-left">
-              <Link to="/#home-strip" className="logo" onClick={(e) => handleLinkClick(e, 'home-strip')}>
+              <Link to="#" className="logo" onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <img src={`${import.meta.env.BASE_URL}thiyash/thiyash-logo.png`} alt="Thiyash Enterprise" className="logo-img" style={{ height: '60px', width: 'auto', objectFit: 'contain' }} /> 
               </Link>
               <p>Your trusted wholesale partner for premium housekeeping and cleaning products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2009.</p>

@@ -33,7 +33,7 @@ const Footer = () => {
         <footer>
           <div className="footer-grid">
             <Reveal className="fg-about" animation="reveal-left">
-              <Link to="/#home-strip" className="logo" style={{ display: 'inline-block' }} onClick={(e) => handleLinkClick(e, 'home-strip')}>
+              <Link to="#" className="logo" style={{ display: 'inline-block' }} onClick={(e) => { e.preventDefault(); window.scrollTo({ top: 0, behavior: 'smooth' }); }}>
                 <img src={`${import.meta.env.BASE_URL}perundurai/PS-FULL-LOGO.png`} alt="Perundurai Surgicals" className="logo-img" style={{ objectFit: 'contain'}} /> 
               </Link>
               <p>Your trusted wholesale partner for surgical and pharmaceuticals products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2016.</p>
