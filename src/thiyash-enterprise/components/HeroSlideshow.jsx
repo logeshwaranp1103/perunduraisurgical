@@ -2,10 +2,16 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { assetUrl } from '../utils/assetUrl';
 
 const SLIDES = [
-  { src: 'https://images.unsplash.com/photo-1584622650111-993a426fbf0a?w=1400&q=85&auto=format&fit=crop', tag: 'CLEANING TOOLS', name: 'Premium Mops', desc: 'Microfiber and cotton wet mops for industrial floors.' },
-  { src: 'https://images.unsplash.com/photo-1581578731522-aa7c0411d7f6?w=1400&q=85&auto=format&fit=crop', tag: 'CHEMICALS', name: 'Floor Sanitizers', desc: 'Hospital-grade disinfectants and surface cleaners.' },
-  { src: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=1400&q=85&auto=format&fit=crop', tag: 'WASTE MANAGEMENT', name: 'Heavy Duty Bins', desc: 'Pedal bins and bio-hazard waste management solutions.' },
-  { src: 'https://images.unsplash.com/photo-1563453392212-326f5e854473?w=1400&q=85&auto=format&fit=crop', tag: 'PPE', name: 'Safety Gloves', desc: 'Nitrile and rubber gloves for cleaning staff protection.' },
+  { src: assetUrl('thiyash/cleaning-tools/mop.jpg'), tag: 'CLEANING TOOLS', name: 'Premium Mops', desc: 'Microfiber and cotton wet mops for industrial floors.' },
+  { src: assetUrl('thiyash/hygiene-sanitization/sanitizer.jpg'), tag: 'HYGIENE', name: 'Hand Sanitizers', desc: 'Premium hand sanitizers for clinical and household use.' },
+  { src: assetUrl('thiyash/cleaning-tools/broom.jpg'), tag: 'CLEANING TOOLS', name: 'Heavy Duty Brooms', desc: 'Durable brooms for industrial and outdoor cleaning.' },
+  { src: assetUrl('thiyash/laundry-care/Liquid Detergen.jpeg'), tag: 'LAUNDRY CARE', name: 'Liquid Detergents', desc: 'Professional grade detergents for pristine fabric care.' },
+  { src: assetUrl('thiyash/hygiene-sanitization/surface-sanitizer.jpg'), tag: 'SANITIZATION', name: 'Surface Disinfectants', desc: 'Hospital-grade disinfectants for all types of surfaces.' },
+  { src: assetUrl('thiyash/cleaning-tools/floor wiper.jpg'), tag: 'CLEANING TOOLS', name: 'Floor Wipers', desc: 'High-quality wipers for quick and efficient floor drying.' },
+  { src: assetUrl('thiyash/hygiene-sanitization/facial-tissues.jpg'), tag: 'PAPER PRODUCTS', name: 'Facial Tissues', desc: 'Soft and absorbent tissues for personal hygiene.' },
+  { src: assetUrl('thiyash/cleaning-tools/garbagebag.jpg'), tag: 'WASTE MANAGEMENT', name: 'Garbage Bags', desc: 'Strong and leak-proof bags for waste disposal.' },
+  { src: assetUrl('thiyash/hygiene-sanitization/room-spray.jpeg'), tag: 'HYGIENE', name: 'Room Fresheners', desc: 'Refreshing scents to maintain a pleasant environment.' },
+  { src: assetUrl('thiyash/cleaning-tools/dustpan.webp'), tag: 'CLEANING TOOLS', name: 'Professional Dustpans', desc: 'Sturdy dustpans for efficient dust collection.' },
 ];
 
 const HeroSlideshow = () => {
@@ -15,9 +21,6 @@ const HeroSlideshow = () => {
   const [oldSlide, setOldSlide] = useState(null);
   const timerRef = useRef(null);
 
-  const TRANSITIONS = ['slide-over', 'push', 'wipe', 'zoom'];
-  const INTERVAL = 5000;
-  const transIdxRef = useRef(0);
   const transitioningRef = useRef(false);
 
   const goTo = useCallback((nextIdx, isReverse = false) => {
@@ -26,15 +29,8 @@ const HeroSlideshow = () => {
     transitioningRef.current = true;
     setOldSlide(current);
 
-    let type;
-    if (isReverse) {
-      type = 'slide-over-reverse';
-    } else if (window.innerWidth < 768) {
-      type = 'slide-over';
-    } else {
-      type = TRANSITIONS[transIdxRef.current % TRANSITIONS.length];
-    }
-    transIdxRef.current++;
+    const type = isReverse ? 'slide-over-reverse' : 'slide-over';
+    
     setTransClass(type);
     setCurrent(nextIdx);
 
@@ -43,14 +39,13 @@ const HeroSlideshow = () => {
       setTransClass('');
       transitioningRef.current = false;
     }, 900);
-  }, [current, TRANSITIONS]);
+  }, [current]);
 
+  // Auto-play standard forward (right-to-left visual slide)
   useEffect(() => {
-    if (!transitioningRef.current) {
-      timerRef.current = setInterval(() => {
-        goTo((current + 1) % SLIDES.length);
-      }, INTERVAL);
-    }
+    timerRef.current = setInterval(() => {
+      goTo((current + 1) % SLIDES.length);
+    }, 5000);
     return () => clearInterval(timerRef.current);
   }, [current, goTo]);
 

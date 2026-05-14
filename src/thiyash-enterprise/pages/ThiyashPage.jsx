@@ -47,11 +47,11 @@ export default function ThiyashPage() {
       <WhyUs />
       <Brands />
       <Licenses />
+      <Clients />
       <Services />
       <Testimonials />
       <Contact />
       <FAQ />
-      <Clients />
       <Footer />
     </div>
   );

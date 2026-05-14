@@ -28,9 +28,6 @@ const HeroSlideshow = () => {
   const [oldSlide, setOldSlide] = useState(null);
   const timerRef = useRef(null);
 
-  const TRANSITIONS = ['slide-over', 'push', 'wipe', 'zoom'];
-  const INTERVAL = 5000;
-  const transIdxRef = useRef(0);
   const transitioningRef = useRef(false);
 
   const goTo = useCallback((nextIdx, isReverse = false) => {
@@ -39,15 +36,8 @@ const HeroSlideshow = () => {
     transitioningRef.current = true;
     setOldSlide(current);
 
-    let type;
-    if (isReverse) {
-      type = 'slide-over-reverse';
-    } else if (window.innerWidth < 768) {
-      type = 'slide-over';
-    } else {
-      type = TRANSITIONS[transIdxRef.current % TRANSITIONS.length];
-    }
-    transIdxRef.current++;
+    const type = isReverse ? 'slide-over-reverse' : 'slide-over';
+    
     setTransClass(type);
     setCurrent(nextIdx);
 
@@ -56,14 +46,12 @@ const HeroSlideshow = () => {
       setTransClass('');
       transitioningRef.current = false;
     }, 900);
-  }, [current, TRANSITIONS]);
+  }, [current]);
 
   useEffect(() => {
-    if (!transitioningRef.current) {
-      timerRef.current = setInterval(() => {
-        goTo((current + 1) % SLIDES.length);
-      }, INTERVAL);
-    }
+    timerRef.current = setInterval(() => {
+      goTo((current + 1) % SLIDES.length);
+    }, 5000);
     return () => clearInterval(timerRef.current);
   }, [current, goTo]);
 

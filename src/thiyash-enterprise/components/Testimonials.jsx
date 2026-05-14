@@ -5,7 +5,7 @@ const Testimonials = () => {
     <section id="testimonials" className="section" style={{ paddingTop: '30px' }}>
       <Reveal className="s-head center" animation="reveal-up">
         <span className="s-tag">Client Feedback</span>
-        <h2 className="s-title">Trusted by <em>facility management Professionals</em></h2>
+        <h2 className="s-title"><em>The Choice of Hygiene & Cleaning Products</em></h2>
       </Reveal>
       <Reveal className="section-visual" animation="reveal-up" delay="0.05s">
         <img

@@ -83,7 +83,7 @@ h6 {
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #c97a15;
+    background: #cc0000;
 }
 
 body *::-webkit-scrollbar {
@@ -186,7 +186,7 @@ nav.scrolled {
     bottom: -4px;
     width: 100%;
     height: 2px;
-    background: #C97A15;
+    background: #cc0000;
     transform: scaleX(0);
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -223,7 +223,7 @@ nav.scrolled {
 }
 
 .nav-cta {
-    background: #C97A15;
+    background: #cc0000;
     color: #fff;
     font-size: 13px;
     font-weight: 600;
@@ -236,7 +236,7 @@ nav.scrolled {
 }
 
 .nav-cta:hover {
-    background: #A86010;
+    background: #990000;
 }
 
 .nav-contact-btn {
@@ -531,7 +531,7 @@ nav.scrolled {
         content: '';
         position: absolute;
         inset: 0;
-        background-image: radial-gradient(#c97a15 1.2px, transparent 1.2px);
+        background-image: radial-gradient(#cc0000 1.2px, transparent 1.2px);
         background-size: 28px 28px;
         pointer-events: none;
     }
@@ -545,7 +545,7 @@ nav.scrolled {
 
     #hero::after {
         opacity: 0;
-        background-image: radial-gradient(#c97a15 1.8px, transparent 1.8px);
+        background-image: radial-gradient(#cc0000 1.8px, transparent 1.8px);
         filter: none !important;
         mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
         -webkit-mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
@@ -609,9 +609,9 @@ nav.scrolled {
     .hero-badge {
         display: inline-flex;
         align-items: center;
-        background: rgba(201, 122, 21, 0.1);
-        border: 1px solid rgba(201, 122, 21, 0.4);
-        color: #C97A15;
+        background: #cc0000;
+        border: 1px solid #cc0000;
+        color: #ffffff;
         font-family: 'Space Mono', monospace;
         font-size: 11px;
         padding: 6px 14px;
@@ -622,8 +622,9 @@ nav.scrolled {
     }
 
     .hero-badge:hover {
-        color: white;
-        background-color: #C97A15;
+        background: #990000;
+        border-color: #990000;
+        color: #ffffff;
     }
 
     .reveal {
@@ -725,7 +726,7 @@ nav.scrolled {
     }
 
     .btn-primary {
-        background: #C97A15;
+        background: #cc0000;
         color: white;
         padding: 14px 32px;
         border-radius: 10px;
@@ -755,7 +756,7 @@ nav.scrolled {
 
     @media (hover: hover) {
         .btn-primary:hover {
-            background: #A86010;
+            background: #990000;
             transform: translateY(-3px);
             box-shadow: none !important;
         }
@@ -988,7 +989,7 @@ nav.scrolled {
         display: inline-flex;
         align-items: center;
         gap: 6px;
-        background: #C97A15;
+        background: #cc0000;
         color: #fff;
         font-size: 12px;
         font-weight: 700;
@@ -1001,7 +1002,7 @@ nav.scrolled {
     }
 
     .hs-enquire:hover {
-        background: #a86010;
+        background: #990000;
         transform: translateX(3px);
     }
 
@@ -1066,7 +1067,7 @@ nav.scrolled {
     .hs-dot.active {
         width: 20px;
         border-radius: 3px;
-        background: #C97A15;
+        background: #cc0000;
     }
 
     .hs-cat-badge {
@@ -1112,7 +1113,7 @@ nav.scrolled {
     .hs-thumb:hover,
     .hs-thumb.active {
         opacity: 1;
-        border-color: #C97A15;
+        border-color: #cc0000;
     }
 
     .hs-thumb img {
@@ -1206,7 +1207,7 @@ nav.scrolled {
 
     .strip {
         margin-top: 68px;
-        background-color: #C97A15;
+        background-color: #cc0000;
         border-top: 1px solid var(--border);
         border-bottom: 1px solid var(--border);
         padding: 12px 0;
@@ -1331,7 +1332,7 @@ nav.scrolled {
     }
 
     .showcase-band {
-        padding: 100px 5%;
+        padding: 30px 5%;
         background: var(--white);
     }
 
@@ -1364,11 +1365,7 @@ nav.scrolled {
         transition: transform 0.6s cubic-bezier(0.22, 1, 0.36, 1);
     }
 
-    @media (min-width: 901px) {
-        .sc-img:hover img {
-            transform: scale(1.08);
-        }
-    }
+
 
     .sc-tall {
         flex: 1.2;
@@ -1394,12 +1391,7 @@ nav.scrolled {
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
     }
 
-    @media (min-width: 901px) {
-        .sc-img:hover .sc-label {
-            padding-bottom: 24px;
-            background: linear-gradient(to top, rgba(4, 44, 83, 0.95) 10%, transparent);
-        }
-    }
+
 
     .showcase-inner-4col {
         display: grid;
@@ -1726,8 +1718,8 @@ nav.scrolled {
     }
 
     .lic-grid {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
+        display: flex;
+        justify-content: center;
         gap: 24px;
     }
 
@@ -1738,6 +1730,8 @@ nav.scrolled {
         border-radius: var(--radius);
         text-align: center;
         transition: all 0.4s cubic-bezier(0.25, 1, 0.5, 1);
+        max-width: 340px;
+        width: 100%;
     }
 
     .lic-card:hover {
@@ -1956,7 +1950,7 @@ nav.scrolled {
     }
 
     .footer {
-        background: #1e293b !important;
+        background: #0E0E1A;
         color: rgba(255, 255, 255, 0.7);
         padding: 80px 5% 40px;
     }
@@ -2565,7 +2559,7 @@ nav.scrolled {
 
         .footer {
             padding: 60px 24px 30px !important;
-            background: #1e293b !important;
+            background: #0E0E1A !important;
             color: rgba(255, 255, 255, 0.7) !important;
         }
 

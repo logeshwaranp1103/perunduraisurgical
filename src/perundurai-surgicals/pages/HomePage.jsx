@@ -50,12 +50,12 @@ export default function HomePage() {
       <Brands />
       <AuthorizedDealers />
       <Licenses />
+      <Clients />
       <Services />
       <Testimonials />
       <Contact />
       <EnterpriseDetails />
       <FAQ />
-      <Clients />
       <Footer />
     </div>
   );
