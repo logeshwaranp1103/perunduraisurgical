@@ -2,23 +2,21 @@ import { useState, useEffect, useRef, useCallback } from 'react';
 import { assetUrl } from '../utils/assetUrl';
 
 const SLIDES = [
-  { src: 'perundurai/images/Blades-and-Scalpel.jpg', tag: 'SURGICAL INSTRUMENTS', name: 'Scalpel & Blades', desc: 'TechnoCut — Sizes #10 #11 #15 #22 #23' },
-  { src: 'perundurai/images/blood-collection-tubes.webp', tag: 'DIAGNOSTICS', name: 'Blood Collection Tubes', desc: 'MB Vacuum K2 EDTA — 2ml & 3ml available' },
-  { src: 'perundurai/images/cannulas.png', tag: 'IV & INFUSION', name: 'IV Cannulas', desc: 'All gauges — Grey 16G to Yellow 24G' },
-  { src: 'perundurai/images/Disinfectants.avif', tag: 'INFECTION CONTROL', name: 'Disinfectants', desc: 'Hospital-grade surface & skin antiseptics' },
-  { src: 'perundurai/images/disposal-box.png', tag: 'WASTE MANAGEMENT', name: 'Safety Disposal Box', desc: 'Kojak HMD — WHO Standard Sharps Container' },
-  { src: 'perundurai/images/Endotracheal tubes.jpg', tag: 'CRITICAL CARE', name: 'Endotracheal Tube', desc: 'Romsons Cuffed — Oral/Nasal, Size 10N' },
-  { src: 'perundurai/images/face-mask.jpg', tag: 'PPE & PROTECTION', name: '3-Ply Face Masks', desc: 'BFE 99% — Fluid Resistant, Box of 50' },
-  { src: 'perundurai/images/gloves.webp', tag: 'PPE & PROTECTION', name: 'Nitrile Gloves', desc: 'Romsons — Latex Free, Powder Free, All sizes' },
-  { src: 'perundurai/images/medical-tapes.avif', tag: 'WOUND CARE', name: 'Medical Tapes', desc: 'Surgical & micropore adhesive tapes' },
-  { src: 'perundurai/images/Nebulizer masks.webp', tag: 'RESPIRATORY', name: 'Nebulizer Mask Kit', desc: 'Adult & Paediatric — with tubing & cup' },
-  { src: 'perundurai/images/nebulizer.webp', tag: 'RESPIRATORY', name: 'Compressor Nebulizer', desc: 'Romsons — Quiet motor, 6L/min flow rate' },
-  { src: 'perundurai/images/needles.webp', tag: 'IV & INFUSION', name: 'Syringes & Needles', desc: 'HMD Dispovan Unolok — 1ml to 20ml sizes' },
-  { src: 'perundurai/images/Oxygen masks.webp', tag: 'RESPIRATORY', name: 'Oxygen Mask with Tubing', desc: 'Adult non-rebreather with 2m oxygen tubing' },
-  { src: 'perundurai/images/oxygen-concentrator.jpeg', tag: 'RESPIRATORY', name: 'Oxygen Concentrator', desc: 'Olex — 1–10 LPM, 93% purity, on wheels' },
-  { src: 'perundurai/images/ppe-kit.jpg', tag: 'PPE & PROTECTION', name: 'PPE Kit — Full Body', desc: 'Coverall + Goggles + Mask + Gloves + Shoe Cover' },
-  { src: 'perundurai/images/pulse-oximeter.webp', tag: 'DIAGNOSTICS', name: 'Pulse Oximeter', desc: 'Romsons — SpO2 & PR, OLED display' },
-  { src: 'perundurai/images/shoe-cover.jpg', tag: 'PPE & PROTECTION', name: 'Disposable Shoe Covers', desc: 'Waterproof PE — 100 pairs per pack' }
+  { src: 'perundurai/Surgical instruments/Scalpel Blade.jpg', tag: 'SURGICAL', name: 'Scalpel & Blades', desc: 'Carbon steel and stainless steel surgical blades' },
+  { src: 'perundurai/Diagnostic Supplies/Pulse Oximeter.jpg', tag: 'DIAGNOSTIC', name: 'Pulse Oximeter', desc: 'OLED display, high accuracy SpO2 sensor' },
+  { src: 'perundurai/Diagnostic Supplies/Digital BP Monitor.jpg', tag: 'DIAGNOSTIC', name: 'Digital BP Monitor', desc: 'Fully automatic, one-touch operation' },
+  { src: 'perundurai/IV infusion/IV Cannula.jpg', tag: 'IV & INFUSION', name: 'IV Cannula', desc: 'With injection port and wings, all gauges available' },
+  { src: 'perundurai/PPE/3-Ply Surgical Mask.jpg', tag: 'PPE', name: '3-Ply Surgical Mask', desc: 'Premium 3-ply, BFE >99% certification' },
+  { src: 'perundurai/PPE/Nitrile Examination Gloves.jpg', tag: 'PPE', name: 'Nitrile Gloves', desc: 'Latex-free examination strength, all sizes' },
+  { src: 'perundurai/Wound care/Sterile Gauze Pads.jpg', tag: 'WOUND CARE', name: 'Sterile Gauze Pads', desc: 'High absorbency sterile dressing' },
+  { src: 'perundurai/Diagnostic Supplies/Digital Thermometer.jpg', tag: 'DIAGNOSTIC', name: 'Digital Thermometer', desc: 'Fast and accurate body temperature measurement' },
+  { src: 'perundurai/Diagnostic Supplies/Glucometer.png', tag: 'DIAGNOSTIC', name: 'Glucometer', desc: 'Precise blood glucose monitoring kit' },
+  { src: 'perundurai/Diagnostic Supplies/Stethoscope.jpg', tag: 'DIAGNOSTIC', name: 'Stethoscope', desc: 'Littmann Classic type, high acoustic sensitivity' },
+  { src: 'perundurai/Surgical instruments/Mayo Scissors.jpg', tag: 'SURGICAL', name: 'Mayo Scissors', desc: 'Straight & curved, tungsten carbide reinforced' },
+  { src: 'perundurai/IV infusion/Burette Chamber Set.webp', tag: 'IV & INFUSION', name: 'Burette Chamber Set', desc: '110ml/150ml, micro drip (60 drops/ml)' },
+  { src: 'perundurai/Wound care/Crepe Bandage.webp', tag: 'WOUND CARE', name: 'Crepe Bandage', desc: 'Elastic and firm support rolls for injuries' },
+  { src: 'perundurai/Pharmaceutical/Amoxicillin-Clavulanate.webp', tag: 'PHARMA', name: 'Antibiotics', desc: 'Augmentin, Azithromycin, and specialty drugs' },
+  { src: 'perundurai/IV infusion/Syringe Infusion Pump.webp', tag: 'IV & INFUSION', name: 'Syringe Infusion Pump', desc: 'Controlled precision dosing for critical care' }
 ].map((slide) => ({ ...slide, src: assetUrl(slide.src) }));
 
 const HeroSlideshow = () => {

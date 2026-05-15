@@ -598,7 +598,6 @@
         margin-top: 68px;
         background-color: #C97A15;
         border-top: 1px solid var(--border);
-        border-bottom: 1px solid var(--border);
         padding: 12px 0;
         overflow: hidden;
     }
