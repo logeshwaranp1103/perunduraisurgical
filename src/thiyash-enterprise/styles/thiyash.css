@@ -407,7 +407,7 @@ nav.scrolled {
 .thiyash-theme {
     --navy: #1E2A6E;
     --navy-light: #2A3B96;
-    --blue: #E8191A;
+    --red: #E8191A;
     --blue-mid: #C61516;
     --blue-light: #FDE8E8;
     --teal: #1E2A6E;
@@ -1238,7 +1238,7 @@ nav.scrolled {
         content: '';
         width: 6px;
         height: 6px;
-        background: var(--blue);
+        background-color: rgba(255, 255, 255, 0.756);
         border-radius: 50%;
     }
 
@@ -1252,11 +1252,12 @@ nav.scrolled {
     }
 
     #about.section {
-        padding-top: 10px;
+        padding-top: 30px;
     }
 
     .section.alt {
         background: var(--bg-alt);
+        padding-bottom: 15px;
     }
 
     .s-tag {
@@ -1288,9 +1289,8 @@ nav.scrolled {
         font-size: 14px;
         color: var(--text-mid);
         line-height: 1.75;
-        text-align: center;
         max-width: 600px;
-        margin: 0 auto;
+        text-align: justify;
     }
 
     .s-head {
@@ -2131,7 +2131,8 @@ nav.scrolled {
         }
 
         .s-sub {
-            text-align: center;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         .strip {
@@ -2177,7 +2178,8 @@ nav.scrolled {
         .hero-sub {
             font-size: 16px;
             margin: 0 auto 24px;
-            text-align: center;
+            text-align: justify;
+            text-justify: inter-word;
             line-height: 1.6;
             max-width: 100%;
         }

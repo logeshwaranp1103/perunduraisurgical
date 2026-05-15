@@ -2,7 +2,7 @@ import Reveal from '../components/Reveal';
 
 const Licenses = () => {
   return (
-    <section id="licenses" className="section" style={{ paddingTop: '30px' }}>
+    <section id="licenses" className="section" style={{ paddingTop: '30px', paddingBottom: '15px' }}>
       <Reveal className="s-head center" animation="reveal-up">
         <span className="s-tag">Certifications</span>
         <h2 className="s-title">Licensed & <em>Fully Compliant</em></h2>

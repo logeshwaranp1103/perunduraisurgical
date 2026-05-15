@@ -14,7 +14,6 @@ import Licenses from '../components/Licenses';
 import Services from '../components/Services';
 import Testimonials from '../components/Testimonials';
 import Contact from '../components/Contact';
-import EnterpriseDetails from '../components/EnterpriseDetails';
 import FAQ from '../components/FAQ';
 import Clients from '../components/Clients';
 import Footer from '../components/Footer';
@@ -54,7 +53,6 @@ export default function HomePage() {
       <Services />
       <Testimonials />
       <Contact />
-      <EnterpriseDetails />
       <FAQ />
       <Footer />
     </div>

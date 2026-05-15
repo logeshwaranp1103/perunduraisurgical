@@ -17,7 +17,7 @@ const FAQ = () => {
   ];
 
   return (
-    <section id="faq" className="section alt" style={{ paddingTop: 0 }}>
+    <section id="faq" className="section alt" style={{ paddingTop: '15px' }}>
       <Reveal className="s-head center" animation="reveal-up">
         <span className="s-tag">FAQ</span>
         <h2 className="s-title">Frequently Asked <em>Questions</em></h2>

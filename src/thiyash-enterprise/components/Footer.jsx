@@ -9,7 +9,7 @@ const Footer = () => {
   const isProductsPage = location.pathname === '/products' || location.pathname === '/surgicals/products';
 
   const handleLinkClick = (e, id) => {
-    if (location.pathname === '/' || location.pathname === '') {
+    if (location.pathname === '/enterprise' || location.pathname === '/enterprise/') {
       if (e) e.preventDefault();
       scrollToId(e, id);
     }
@@ -36,7 +36,7 @@ const Footer = () => {
               </Link>
               <p>Your trusted wholesale partner for premium housekeeping and cleaning products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2009.</p>
               <div className="hero-btns">
-                <Link to="/#products" className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</Link>
+                <Link to="/enterprise#products" className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</Link>
                 <a href="https://wa.me/919865271371" target="_blank" rel="noreferrer" className="btn-secondary">Message on WhatsApp</a>
               </div>
               <div className="foot-social visible">
@@ -61,24 +61,22 @@ const Footer = () => {
             <Reveal className="fg-col" animation="reveal-up" delay="0.1s">
               <h4>Quick Links</h4>
               <ul>
-                <li><Link to="/#about" onClick={(e) => handleLinkClick(e, 'about')}>About Us</Link></li>
-                <li><Link to="/#products" onClick={(e) => handleLinkClick(e, 'products')}>Products</Link></li>
-                <li><Link to="/#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</Link></li>
-                <li><Link to="/#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</Link></li>
-                <li><Link to="/#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</Link></li>
-                <li><Link to="/#clients" onClick={(e) => handleLinkClick(e, 'clients')}>Clients</Link></li>
-                <li><Link to="/#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</Link></li>
+                <li><Link to="/enterprise#about" onClick={(e) => handleLinkClick(e, 'about')}>About Us</Link></li>
+                <li><Link to="/enterprise#products" onClick={(e) => handleLinkClick(e, 'products')}>Products</Link></li>
+                <li><Link to="/enterprise#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</Link></li>
+                <li><Link to="/enterprise#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</Link></li>
+                <li><Link to="/enterprise#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</Link></li>
+                <li><Link to="/enterprise#clients" onClick={(e) => handleLinkClick(e, 'clients')}>Clients</Link></li>
+                <li><Link to="/enterprise#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</Link></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-up" delay="0.2s">
               <h4>Products</h4>
               <ul>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'chemicals'})); } }}>Cleaning Chemicals</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'mops'})); } }}>Mops & Brushes</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'bins'})); } }}>Waste Management</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'tools'})); } }}>Cleaning Tools</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'ppe'})); } }}>PPE & Safety</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'paper'})); } }}>Paper & Disposables</Link></li>
+                <li><Link to="/enterprise#products" onClick={(e) => { if(location.pathname === '/enterprise' || location.pathname === '/enterprise/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'chemicals'})); } }}>Cleaning Chemicals</Link></li>
+                <li><Link to="/enterprise#products" onClick={(e) => { if(location.pathname === '/enterprise' || location.pathname === '/enterprise/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'tools'})); } }}>Cleaning Tools</Link></li>
+                <li><Link to="/enterprise#products" onClick={(e) => { if(location.pathname === '/enterprise' || location.pathname === '/enterprise/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'hygiene'})); } }}>Hygiene & Sanitization</Link></li>
+                <li><Link to="/enterprise#products" onClick={(e) => { if(location.pathname === '/enterprise' || location.pathname === '/enterprise/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'laundry'})); } }}>Laundry Care</Link></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-right" delay="0.3s">

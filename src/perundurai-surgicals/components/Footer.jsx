@@ -9,7 +9,7 @@ const Footer = () => {
   const isProductsPage = location.pathname === '/products' || location.pathname === '/surgicals/products';
 
   const handleLinkClick = (e, id) => {
-    if (location.pathname === '/' || location.pathname === '') {
+    if (location.pathname === '/surgicals' || location.pathname === '/surgicals/') {
       if (e) e.preventDefault();
       scrollToId(e, id);
     }
@@ -38,7 +38,7 @@ const Footer = () => {
               </Link>
               <p>Your trusted wholesale partner for surgical and pharmaceuticals products in Erode District, Tamil Nadu. Licensed, genuine, and reliable since 2016.</p>
               <div className="hero-btns">
-                <Link to="/#products" className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</Link>
+                <Link to="/surgicals#products" className="btn-primary" onClick={(e) => handleLinkClick(e, 'products')}>Explore Products</Link>
                 <a href="https://wa.me/919865271371" target="_blank" rel="noreferrer" className="btn-secondary">Message on WhatsApp</a>
               </div>
               <div className="foot-social visible">
@@ -63,23 +63,23 @@ const Footer = () => {
             <Reveal className="fg-col" animation="reveal-up" delay="0.1s">
               <h4>Quick Links</h4>
               <ul>
-                <li><Link to="/#about" onClick={(e) => handleLinkClick(e, 'about')}>About Us</Link></li>
-                <li><Link to="/#products" onClick={(e) => handleLinkClick(e, 'products')}>Products</Link></li>
-                <li><Link to="/#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</Link></li>
-                <li><Link to="/#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</Link></li>
-                <li><Link to="/#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</Link></li>
-                <li><Link to="/#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</Link></li>
+                <li><Link to="/surgicals#about" onClick={(e) => handleLinkClick(e, 'about')}>About Us</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => handleLinkClick(e, 'products')}>Products</Link></li>
+                <li><Link to="/surgicals#brands" onClick={(e) => handleLinkClick(e, 'brands')}>Brands</Link></li>
+                <li><Link to="/surgicals#services" onClick={(e) => handleLinkClick(e, 'services')}>Services</Link></li>
+                <li><Link to="/surgicals#licenses" onClick={(e) => handleLinkClick(e, 'licenses')}>Certifications</Link></li>
+                <li><Link to="/surgicals#contact-form" onClick={(e) => handleLinkClick(e, 'contact-form')}>Get Quote</Link></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-up" delay="0.2s">
               <h4>Products</h4>
               <ul>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'surgical'})); } }}>Surgical Instruments</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'wound'})); } }}>Wound Care</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'iv'})); } }}>IV & Infusion</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'diag'})); } }}>Diagnostics</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'ppe'})); } }}>PPE & Protection</Link></li>
-                <li><Link to="/#products" onClick={(e) => { if(location.pathname === '/' || location.pathname === '') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'pharma'})); } }}>Pharmaceutical</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'surgical'})); } }}>Surgical Instruments</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'wound'})); } }}>Wound Care</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'iv'})); } }}>IV & Infusion</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'diag'})); } }}>Diagnostics</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'ppe'})); } }}>PPE & Protection</Link></li>
+                <li><Link to="/surgicals#products" onClick={(e) => { if(location.pathname === '/surgicals' || location.pathname === '/surgicals/') { if(e) e.preventDefault(); scrollToId(e, 'products'); window.dispatchEvent(new CustomEvent('selectProductCat', {detail: 'pharma'})); } }}>Pharmaceutical</Link></li>
               </ul>
             </Reveal>
             <Reveal className="fg-col" animation="reveal-right" delay="0.3s">

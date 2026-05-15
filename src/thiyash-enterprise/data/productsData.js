@@ -72,6 +72,7 @@ export const productsByCat = {
     { name: 'Vacuum Cleaner', desc: 'Industrial grade wet and dry vacuum', img: assetUrl('thiyash/cleaning-tools/vaccum cleaner.webp') },
     { name: 'Dustpan Set', desc: 'Long-handle dustpan and brush set', img: assetUrl('thiyash/cleaning-tools/dustpan.webp') },
     { name: 'Pedal Bin', desc: 'Hands-free plastic pedal dustbin', img: 'https://images.unsplash.com/photo-1532938911079-1b06ac7ceec7?w=400' },
-    { name: 'Garbage Bags', desc: 'Heavy duty black trash bags', img: assetUrl('thiyash/cleaning-tools/garbagebag.jpg') }
+    { name: 'Garbage Bags', desc: 'Heavy duty black trash bags', img: assetUrl('thiyash/cleaning-tools/garbagebag.jpg') },
+    { name: 'Dustbin', desc: 'Heavy duty trash bin', img: 'https://plus.unsplash.com/premium_photo-1664392292014-9b4e83e12bb5' }
   ]
 };
