@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react';
 import { useLocation } from 'react-router-dom';
 import Navbar from '../components/Navbar';
+import '../styles/surgicals.css';
 import MarqueeStrip from '../components/MarqueeStrip';
 import Hero from '../components/Hero';
 import StatsBar from '../components/StatsBar';

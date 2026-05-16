@@ -148,7 +148,7 @@
 }
 
 /* Pause on hover for better readability */
-.ps-clients-marquee-wrapper:hover .ps-clients-marquee-track {
+.ps-clients-marquee-track:hover {
   animation-play-state: paused;
 }
 

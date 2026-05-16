@@ -1,5 +1,6 @@
 import { useState, useEffect } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
+import './landing.css';
 
 const psLogo = `${import.meta.env.BASE_URL}perundurai/PS-FULL-LOGO.png`;
 const thiyashLogo = `${import.meta.env.BASE_URL}thiyash/thiyash-logo.png`;

@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
+import '../styles/thiyash.css';
 import { categories, productsByCat } from '../data/productsData';
 import { assetUrl } from '../utils/assetUrl';
 import ProductCard from '../../perundurai-surgicals/components/ProductCard';
@@ -7,9 +8,6 @@ import ProductModal from '../../perundurai-surgicals/components/ProductModal';
 import ProductSearch from '../../perundurai-surgicals/components/ProductSearch';
 import Navbar from '../components/Navbar';
 import Footer from '../components/Footer';
-
-import '../styles/thiyash.css';
-import '../../perundurai-surgicals/styles/surgicals.css'; // Reusing layout classes
 
 export default function ThiyashProductsPage() {
   const [activeCat, setActiveCat] = useState('chemicals');

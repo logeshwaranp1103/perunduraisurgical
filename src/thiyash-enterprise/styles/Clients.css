@@ -1,14 +1,11 @@
 .th-clients-section {
-  /* Theme Variables */
   --th-navy-bg: #0b1f38;
   --th-navy-light: #0f2a4a;
   --th-red: #E8191A;
   --th-red-rgb: 232, 25, 26;
-  --th-red-mid: #ff4d4d;
   --th-red-light: #ff7b7b;
   --th-white: #ffffff;
   --th-white-rgb: 255, 255, 255;
-  --th-text-light: #f8f9fa;
 
   background-color: var(--th-navy-bg);
   padding: 120px 0;
@@ -18,7 +15,6 @@
   border-top: 1px solid rgba(var(--th-white-rgb), 0.05);
 }
 
-/* Ambient animated glowing blobs */
 .th-clients-section::before {
   content: '';
   position: absolute;
@@ -26,10 +22,11 @@
   height: 100%;
   top: 0;
   left: 0;
-  background: 
+  background:
     radial-gradient(circle at 10% 20%, rgba(var(--th-red-rgb), 0.1) 0%, transparent 40%),
     radial-gradient(circle at 90% 80%, rgba(var(--th-red-rgb), 0.08) 0%, transparent 40%);
   pointer-events: none;
+  z-index: 0;
 }
 
 .th-clients-container {
@@ -40,6 +37,7 @@
   z-index: 1;
 }
 
+/* ── Header ── */
 .th-clients-header {
   text-align: center;
   margin-bottom: 80px;
@@ -61,17 +59,27 @@
   border: 1px solid rgba(var(--th-red-rgb), 0.2);
 }
 
+/* ✅ TRAITOR KILLED: removed gradient-text, background-clip, -webkit-text-fill-color */
+/* CHANGE TO */
 .th-clients-title {
-  font-size: clamp(2.5rem, 5vw, 3.5rem);
-  margin: 0;
-  font-weight: 400;
-  background: linear-gradient(135deg, #ffffff 40%, var(--th-red-light) 90%);
-  background-clip: text;
-  -webkit-text-fill-color: transparent;
+  font-size: clamp(2.5rem, 5vw, 3.5rem); /* ADD THIS LINE BACK */
+  font-weight: 700 !important;
+  background: linear-gradient(90deg, #ffffff 30%, #ffb3b3 65%, var(--th-red-light) 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
+  color: transparent !important;
   line-height: 1.1;
   position: relative;
   display: inline-block;
   padding-bottom: 24px;
+}
+
+.th-clients-title span {
+  background: linear-gradient(90deg, #ffb3b3 0%, var(--th-red-light) 100%) !important;
+  background-clip: text !important;
+  -webkit-background-clip: text !important;
+  -webkit-text-fill-color: transparent !important;
 }
 
 .th-clients-title::after {
@@ -94,7 +102,7 @@
   line-height: 1.6;
 }
 
-/* Elite Grid Layout */
+/* ── Grid ── */
 .th-clients-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
@@ -108,9 +116,10 @@
   perspective: 1000px;
 }
 
+/* ✅ TRAITOR KILLED: was 0.03 opacity (invisible cards) → now 0.05 */
 .th-card-inner {
-  background: rgba(var(--th-white-rgb), 0.03);
-  border: 1px solid rgba(var(--th-white-rgb), 0.07);
+  background: rgba(var(--th-white-rgb), 0.05);
+  border: 1px solid rgba(var(--th-white-rgb), 0.09);
   border-radius: 24px;
   padding: 40px 30px;
   height: 100%;
@@ -119,6 +128,7 @@
   transition: all 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   overflow: hidden;
   position: relative;
+  box-sizing: border-box;
 }
 
 .th-card-front {
@@ -127,22 +137,24 @@
   align-items: flex-start;
   gap: 24px;
   z-index: 2;
+  position: relative;
 }
 
+/* ✅ TRAITOR KILLED: removed transform: rotate(-5deg) */
 .th-client-badge {
-  width: 64px;
-  height: 64px;
+  width: 52px;
+  height: 52px;
   background: linear-gradient(135deg, rgba(var(--th-white-rgb), 0.1), transparent);
   border: 1px solid rgba(var(--th-white-rgb), 0.2);
-  border-radius: 18px;
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 24px;
+  font-size: 20px;
   font-weight: 900;
   color: var(--th-red-light);
-  transform: rotate(-5deg);
   transition: all 0.4s ease;
+  transform: rotate(-5deg);
 }
 
 .th-client-info {
@@ -151,23 +163,26 @@
   gap: 8px;
 }
 
+/* ✅ TRAITOR KILLED: was coral colored → now solid white */
 .th-client-display-name {
-  color: var(--th-white);
-  font-size: 1.25rem;
+  color: #ffffff !important;
+  font-size: 1rem;
   font-weight: 700;
   line-height: 1.4;
   margin: 0;
 }
 
+/* ✅ TRAITOR KILLED: was 0.4 opacity (too dim) → now 0.55 */
 .th-client-type {
-  color: rgba(var(--th-white-rgb), 0.4);
+  /*color: rgba(var(--th-white-rgb), 0.55);*/
+  color: rgba(255, 255, 255, 0.55) !important;
   font-size: 0.85rem;
   text-transform: uppercase;
   letter-spacing: 0.1em;
   font-weight: 600;
 }
 
-/* Card Hover Effects */
+/* ── Hover Effects ── */
 .th-client-premium-card:hover .th-card-inner {
   transform: translateY(-10px);
   background: rgba(var(--th-white-rgb), 0.06);
@@ -176,30 +191,36 @@
 }
 
 .th-client-premium-card:hover .th-client-badge {
-  transform: rotate(0deg) scale(1.1);
+  transform: scale(1.1);
   background: var(--th-red);
   color: var(--th-white);
   border-color: transparent;
   box-shadow: 0 0 25px rgba(var(--th-red-rgb), 0.4);
 }
 
+/* ── Glow (mouse tracker) ── */
 .th-card-glow {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle at var(--x, 50%) var(--y, 50%), rgba(var(--th-red-rgb), 0.15) 0%, transparent 60%);
+  background: radial-gradient(
+    circle at var(--x, 50%) var(--y, 50%),
+    rgba(var(--th-red-rgb), 0.15) 0%,
+    transparent 60%
+  );
   opacity: 0;
   transition: opacity 0.5s;
   pointer-events: none;
+  z-index: 1;
 }
 
 .th-client-premium-card:hover .th-card-glow {
   opacity: 1;
 }
 
-/* Footer Stats */
+/* ── Stats Footer ── */
 .th-clients-footer-v2 {
   display: flex;
   justify-content: center;
@@ -218,7 +239,7 @@
 
 .th-footer-stat strong {
   color: var(--th-red-light);
-  font-size: 2.5rem;
+  font-size: 3.5rem;
   font-weight: 900;
 }
 
@@ -235,7 +256,15 @@
   background: rgba(var(--th-white-rgb), 0.1);
 }
 
-/* Responsive Optimization */
+/* ── Animation Delays ── */
+.delay-1 { animation-delay: 0.1s; }
+.delay-2 { animation-delay: 0.2s; }
+.delay-3 { animation-delay: 0.3s; }
+.delay-4 { animation-delay: 0.4s; }
+.delay-5 { animation-delay: 0.5s; }
+.delay-6 { animation-delay: 0.6s; }
+
+/* ── Responsive ── */
 @media (max-width: 1100px) {
   .th-clients-grid {
     grid-template-columns: repeat(3, 1fr);
@@ -261,7 +290,7 @@
   }
   .th-clients-grid {
     grid-template-columns: repeat(2, 1fr);
-    gap: 12px;
+    gap: 16px;
     margin-bottom: 30px;
   }
   .th-card-inner {
@@ -278,22 +307,13 @@
     width: 48px;
     height: 48px;
     font-size: 18px;
-    margin-top: -10px;
-  }
-  .th-client-display-name {
-    font-size: 0.85rem;
-    line-height: 1.3;
-  }
-  .th-client-type {
-    font-size: 0.6rem;
-    letter-spacing: 0.05em;
   }
   .th-clients-footer-v2 {
     gap: 30px;
     padding-top: 30px;
   }
   .th-footer-stat strong {
-    font-size: 1.8rem;
+    font-size: 2.2rem;
   }
   .th-footer-stat span {
     font-size: 0.65rem;
