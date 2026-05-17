@@ -7,8 +7,8 @@
     /* Medical Gray */
     --teal: #0D9488;
     --cyan: #06B6D4;
-    --amber: #C97A15;
-    --amber-soft: #FAEEDA;
+    --amber: #1A5FA8;
+    --amber-soft: #EBF2FB;
     --text: #0F172A;
     --text-mid: #475569;
     --text-light: #64748B;
@@ -93,7 +93,7 @@
 }
 
 .thiyash-theme ::-webkit-scrollbar-thumb:hover {
-    background: #c97a15;
+    background: #1A5FA8;
 }
 
 /* Hide any accidental internal scrollbars inside the layout */
@@ -209,7 +209,7 @@
     bottom: -4px;
     width: 100%;
     height: 2px;
-    background: #C97A15;
+    background: #E8191A;
     transform: scaleX(1);
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -221,7 +221,7 @@
     bottom: -4px;
     width: 100%;
     height: 2px;
-    background: #C97A15;
+    background: #E8191A;
     transform: scaleX(0);
     transition: transform 0.3s cubic-bezier(0.22, 1, 0.36, 1);
 }
@@ -254,7 +254,7 @@
 }
 
 .thiyash-theme .nav-cta {
-    background: #C97A15;
+    background: #1A5FA8;
     color: #fff;
     font-size: 13px;
     font-weight: 600;
@@ -267,7 +267,7 @@
 }
 
 .thiyash-theme .nav-cta:hover {
-    background: #A86010;
+    background: #0C447C;
 }
 
 .thiyash-theme .nav-contact-btn {
@@ -331,7 +331,7 @@
     content: '';
     position: absolute;
     inset: 0;
-    background-image: radial-gradient(#c97a15 1.2px, transparent 1.2px);
+    background-image: radial-gradient(#1A5FA8 1.2px, transparent 1.2px);
     background-size: 28px 28px;
     pointer-events: none;
 }
@@ -348,7 +348,7 @@
 /* 2. Spotlight Layer: Bright, glowing dots that follow the cursor */
 .thiyash-theme #hero::after {
     opacity: 0;
-    background-image: radial-gradient(#c97a15 1.8px, transparent 1.8px);
+    background-image: radial-gradient(#1A5FA8 1.8px, transparent 1.8px);
     /* Layered shadows for a 'super-glow' effect */
     filter: none !important;
     mask-image: radial-gradient(circle var(--spot-radius) at var(--mouse-x, -999px) var(--mouse-y, -999px), black 0%, transparent 100%);
@@ -437,9 +437,9 @@
 .thiyash-theme .hero-badge {
     display: inline-flex;
     align-items: center;
-    background: rgba(201, 122, 21, 0.1);
-    border: 1px solid rgba(201, 122, 21, 0.4);
-    color: #C97A15;
+    background: rgba(26, 95, 168, 0.1);
+    border: 1px solid rgba(26, 95, 168, 0.4);
+    color: #1A5FA8;
     font-family: 'Space Mono', monospace;
     font-size: 11px;
     padding: 6px 14px;
@@ -451,7 +451,7 @@
 
 .thiyash-theme .hero-badge:hover {
     color: white;
-    background-color: #C97A15;
+    background-color: #1A5FA8;
 }
 
 /* ── REVEAL SYSTEM ── */
@@ -567,7 +567,7 @@
 }
 
 .thiyash-theme .btn-primary {
-    background: #C97A15;
+    background: #1A5FA8;
     color: white;
     padding: 14px 32px;
     border-radius: 10px;
@@ -610,7 +610,7 @@
 
 @media (hover: hover) {
     .thiyash-theme .btn-primary:hover {
-        background: #A86010;
+        background: #0C447C;
         transform: translateY(-3px);
         box-shadow: none !important;
     }
@@ -941,7 +941,7 @@
     display: inline-flex;
     align-items: center;
     gap: 6px;
-    background: #C97A15;
+    background: #1A5FA8;
     color: #fff;
     font-size: 12px;
     font-weight: 700;
@@ -954,7 +954,7 @@
 }
 
 .thiyash-theme .hs-enquire:hover {
-    background: #a86010;
+    background: #0C447C;
     transform: translateX(3px);
 }
 
@@ -1023,7 +1023,7 @@
 .thiyash-theme .hs-dot.active {
     width: 20px;
     border-radius: 3px;
-    background: #C97A15;
+    background: #1A5FA8;
 }
 
 
@@ -1071,12 +1071,12 @@
 
 .thiyash-theme .hs-thumb:hover {
     opacity: 1;
-    border-color: #C97A15;
+    border-color: #1A5FA8;
 }
 
 .thiyash-theme .hs-thumb.active {
     opacity: 1;
-    border-color: #C97A15;
+    border-color: #1A5FA8;
 }
 
 .thiyash-theme .hs-thumb img {
@@ -1199,7 +1199,7 @@
 /* ── STRIP ── */
 .thiyash-theme .strip {
     margin-top: 68px;
-    background-color: #C97A15;
+    background-color: #1A5FA8;
     border-top: 1px solid var(--border);
     padding: 12px 0;
     overflow: hidden;
@@ -1797,6 +1797,15 @@
     justify-content: center;
     position: relative;
     overflow: hidden;
+    transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+@media (hover: hover) {
+    .thiyash-theme .brand-tile:hover {
+        border-color: var(--blue);
+        transform: translateY(-6px);
+        box-shadow: 0 12px 32px rgba(26, 95, 168, 0.12) !important;
+    }
 }
 
 .thiyash-theme .brand-logo-wrapper {
@@ -2648,7 +2657,7 @@
 }
 
 .thiyash-theme .footer-bottom p {
-    background: linear-gradient(90deg, #c97a15 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
+    background: linear-gradient(90deg, #1A5FA8 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     color: transparent !important;
@@ -2761,7 +2770,7 @@
 }
 
 .thiyash-theme .p3 svg {
-    stroke: #C97A15;
+    stroke: #1A5FA8;
 }
 
 .thiyash-theme .p4 svg {
@@ -4248,7 +4257,7 @@
 }
 
 .thiyash-theme .about-enterprise-link span {
-    background: linear-gradient(90deg, #c97a15 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
+    background: linear-gradient(90deg, #1A5FA8 0%, #f0c36a 38%, #78b2f1 72%, #1a5fa8 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent !important;
@@ -6857,14 +6866,16 @@
         padding: 40px;
         border-radius: 24px;
         transition: all 0.4s ease;
-        border: 1px solid transparent;
+        border: 1px solid var(--border);
     }
 
-    .th-why-card:hover {
-        transform: translateY(-10px);
-        background: #ffffff;
-        box-shadow: none !important;
-        border-color: rgba(30, 42, 110, 0.1);
+    @media (hover: hover) {
+        .th-why-card:hover {
+            transform: translateY(-10px);
+            background: #ffffff;
+            box-shadow: 0 12px 32px rgba(26, 95, 168, 0.12) !important;
+            border-color: var(--blue);
+        }
     }
 
     .th-why-icon-box {
@@ -6941,6 +6952,15 @@
         justify-content: center;
         position: relative;
         overflow: hidden;
+        transition: border-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    @media (hover: hover) {
+        .brand-tile:hover {
+            border-color: var(--blue);
+            transform: translateY(-6px);
+            box-shadow: 0 12px 32px rgba(26, 95, 168, 0.12) !important;
+        }
     }
 
     .brand-logo-wrapper {

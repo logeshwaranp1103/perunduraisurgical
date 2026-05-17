@@ -99,8 +99,8 @@ const Navbar = () => {
         <li><Link to={`${basePath}#home-strip`} className={activeSection === 'home-strip' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'home-strip')}>Home</Link></li>
         <li><Link to={`${basePath}#about`} className={activeSection === 'about' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'about')}>About Us</Link></li>
         <li><Link to={`${basePath}#products`} className={activeSection === 'products' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'products')}>Products</Link></li>
-        <li><Link to={`${basePath}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
         <li><Link to={`${basePath}#clients`} className={activeSection === 'clients' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'clients')}>Clients</Link></li>
+        <li><Link to={`${basePath}#services`} className={activeSection === 'services' ? 'active' : ''} onClick={(e) => handleNavClick(e, 'services')}>Services</Link></li>
       </ul>
       <div className="nav-right">
         <a href="tel:+919865271371" className="nav-contact-btn hidden md:flex">
